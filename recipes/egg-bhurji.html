@@ -97,355 +97,664 @@
 
     <main class="container mx-auto px-4 py-8 md:py-12">
 
-        <header class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-bold text-amber-900">The Ultimate Egg Bhurji</h1>
-            <p class="mt-4 text-lg max-w-2xl mx-auto text-stone-700">An interactive guide to creating the most flavorful and perfectly textured Indian scrambled eggs. Adjust servings, follow guided steps, and customize your Bhurji to perfection.</p>
-        </header>
-
-        <section id="info" class="mb-12" aria-labelledby="info-heading">
-            <h2 id="info-heading" class="sr-only">Recipe Quick Stats</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto text-center">
-                <div class="bg-amber-100/50 rounded-xl p-4">
-                    <span class="text-3xl">⏱️</span>
-                    <h3 class="font-semibold mt-2 text-stone-800">Prep Time</h3>
-                    <p class="text-stone-600">5 Mins</p>
-                </div>
-                <div class="bg-amber-100/50 rounded-xl p-4">
-                    <span class="text-3xl">🔥</span>
-                    <h3 class="font-semibold mt-2 text-stone-800">Cook Time</h3>
-                    <p class="text-stone-600">10 Mins</p>
-                </div>
-                <div class="bg-amber-100/50 rounded-xl p-4">
-                    <span class="text-3xl">👨‍👩‍👧</span>
-                    <h3 class="font-semibold mt-2 text-stone-800">Servings</h3>
-                    <p id="servings-display" class="text-stone-600">2</p>
-                </div>
-                <div class="bg-amber-100/50 rounded-xl p-4">
-                    <span class="text-3xl">🍳</span>
-                    <h3 class="font-semibold mt-2 text-stone-800">Difficulty</h3>
-                    <p class="text-stone-600">Easy</p>
+        <!-- Hero Section -->
+        <section class="py-16 px-6">
+            <div class="container mx-auto max-w-6xl">
+                <div class="text-center mb-12 fade-in">
+                    <div class="text-8xl mb-6">🍳</div>
+                    <h1 class="display-1 mb-6">The Ultimate Egg Bhurji</h1>
+                    <p class="body-large text-gray-600 max-w-3xl mx-auto mb-8">
+                        Perfect Indian scrambled eggs in just 15 minutes. This interactive guide will help you 
+                        master the classic breakfast dish with multiple flavor variations and professional techniques.
+                    </p>
+                    
+                    <!-- Recipe Stats -->
+                    <div class="recipe-stats max-w-2xl mx-auto mb-8">
+                        <div class="stat-item">
+                            <div class="stat-icon">⏱️</div>
+                            <div class="stat-value">15 min</div>
+                            <div class="stat-label">Total Time</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">👥</div>
+                            <div class="stat-value">2-4</div>
+                            <div class="stat-label">Servings</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">📊</div>
+                            <div class="stat-value">Easy</div>
+                            <div class="stat-label">Difficulty</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">🔥</div>
+                            <div class="stat-value">250</div>
+                            <div class="stat-label">Calories</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <article class="bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg p-6 md:p-10">
-            <div class="grid md:grid-cols-5 gap-8 md:gap-12">
-                <section class="md:col-span-2" aria-labelledby="ingredients-heading">
-                    <h2 id="ingredients-heading" class="text-3xl text-amber-900 mb-2">Ingredients</h2>
-                    <p class="text-stone-600 mb-6">First, gather all your ingredients. Use the interactive checklist below and adjust the serving size to dynamically update quantities.</p>
-                    
-                    <div class="flex items-center justify-between bg-stone-100 rounded-lg p-3 mb-6">
-                        <span class="font-semibold text-stone-700">Adjust Servings:</span>
-                        <div class="flex items-center gap-2">
-                            <button id="servings-decrement" aria-label="Decrease servings by one" class="w-8 h-8 rounded-full bg-amber-500 text-white font-bold text-lg flex items-center justify-center nav-button">-</button>
-                            <span id="servings-value" class="font-bold text-xl text-stone-800 w-8 text-center" aria-live="polite">2</span>
-                            <button id="servings-increment" aria-label="Increase servings by one" class="w-8 h-8 rounded-full bg-amber-500 text-white font-bold text-lg flex items-center justify-center nav-button">+</button>
+        <!-- Interactive Ingredients Section -->
+        <section id="ingredients" class="py-16 px-6 bg-gray-50">
+            <div class="container mx-auto max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="display-2 mb-6">Interactive Ingredients</h2>
+                    <p class="body-large text-gray-600">Adjust quantities automatically with our smart calculator</p>
+                </div>
+
+                <!-- Serving Calculator -->
+                <div class="card mb-12 slide-up">
+                    <div class="card-body">
+                        <div class="flex items-center justify-center gap-6 p-6 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl">
+                            <label for="servings" class="heading-4 text-gray-700">Number of Servings:</label>
+                            <div class="flex items-center gap-3">
+                                <button id="decrease-servings" class="btn btn-secondary btn-small">−</button>
+                                <input type="number" id="servings" value="2" min="1" max="8" 
+                                       class="form-input w-20 text-center font-bold text-lg">
+                                <button id="increase-servings" class="btn btn-secondary btn-small">+</button>
+                            </div>
                         </div>
                     </div>
-                    
-                    <ul id="ingredients-list" class="space-y-3 text-stone-700">
-                    </ul>
-                </section>
+                </div>
 
-                <section class="md:col-span-3" aria-labelledby="instructions-heading">
-                    <h2 id="instructions-heading" class="text-3xl text-amber-900 mb-2">Guided Instructions</h2>
-                    <p class="text-stone-600 mb-6">Follow these steps for a perfect result. Use the navigation buttons to focus on the current step. Don't rush, and enjoy the process!</p>
-                    <div id="instructions-container" class="space-y-4 mb-6">
+                <!-- Ingredients List -->
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <div class="card slide-up">
+                        <div class="card-header">
+                            <h3 class="heading-3 text-center">🥚 Main Ingredients</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="space-y-4" id="ingredients-list">
+                                <label class="checkbox-custom">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label">
+                                        <span data-base-qty="4" data-unit="" class="quantity-highlight">4</span>
+                                        Eggs, room temperature
+                                    </span>
+                                </label>
+                                <label class="checkbox-custom">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label">
+                                        <span data-base-qty="2" data-unit="" class="quantity-highlight">2</span>
+                                        medium Onions, finely chopped
+                                    </span>
+                                </label>
+                                <label class="checkbox-custom">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label">
+                                        <span data-base-qty="1" data-unit="" class="quantity-highlight">1</span>
+                                        large Tomato, finely chopped
+                                    </span>
+                                </label>
+                                <label class="checkbox-custom">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label">
+                                        <span data-base-qty="2" data-unit="" class="quantity-highlight">2</span>
+                                        Green Chilies, slit lengthwise
+                                    </span>
+                                </label>
+                                <label class="checkbox-custom">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label">
+                                        <span data-base-qty="1" data-unit=" tsp" class="quantity-highlight">1 tsp</span>
+                                        Ginger-Garlic Paste
+                                    </span>
+                                </label>
+                                <label class="checkbox-custom">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label">
+                                        <span data-base-qty="2" data-unit=" tbsp" class="quantity-highlight">2 tbsp</span>
+                                        Oil or Ghee
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="flex justify-center gap-4 mt-8">
-                        <button id="prev-step" class="py-2 px-6 bg-stone-300 text-stone-800 font-semibold rounded-lg shadow-md nav-button">Previous</button>
-                        <button id="next-step" class="py-2 px-6 bg-amber-600 text-white font-semibold rounded-lg shadow-md nav-button hover:bg-amber-700">Next</button>
+
+                    <div class="card slide-up">
+                        <div class="card-header">
+                            <h3 class="heading-3 text-center">🌶️ Spices & Garnish</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="space-y-4">
+                                <label class="checkbox-custom">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label">
+                                        <span data-base-qty="0.5" data-unit=" tsp" class="quantity-highlight">0.5 tsp</span>
+                                        Turmeric Powder
+                                    </span>
+                                </label>
+                                <label class="checkbox-custom">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label">
+                                        <span data-base-qty="0.5" data-unit=" tsp" class="quantity-highlight">0.5 tsp</span>
+                                        Red Chili Powder
+                                    </span>
+                                </label>
+                                <label class="checkbox-custom">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label">
+                                        <span data-base-qty="1" data-unit=" tsp" class="quantity-highlight">1 tsp</span>
+                                        Pav Bhaji Masala
+                                    </span>
+                                </label>
+                                <label class="checkbox-custom">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label">
+                                        <span data-base-qty="2" data-unit=" tbsp" class="quantity-highlight">2 tbsp</span>
+                                        Fresh Coriander, chopped
+                                    </span>
+                                </label>
+                                <label class="checkbox-custom">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label">
+                                        <span class="quantity-highlight">To taste</span>
+                                        Salt
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                </section>
+                </div>
             </div>
-            
-            <hr class="my-10 md:my-16 border-t-2 border-dashed border-amber-200">
+        </section>
 
-            <section id="customization" aria-labelledby="customization-heading">
-                <div class="text-center">
-                    <h2 id="customization-heading" class="text-3xl text-amber-900 mb-2">Flavor Profile & Customization</h2>
-                    <p class="mt-2 text-lg max-w-2xl mx-auto text-stone-700 mb-8">This recipe has a balanced flavor profile. Use the toggles below to explore delicious variations and see tips on how to achieve them.</p>
+        <!-- Step-by-Step Instructions -->
+        <section id="instructions" class="py-16 px-6">
+            <div class="container mx-auto max-w-4xl">
+                <div class="text-center mb-12">
+                    <h2 class="display-2 mb-6">Guided Instructions</h2>
+                    <p class="body-large text-gray-600">Follow along with our interactive step-by-step guide</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-                    <div class="chart-container">
-                        <canvas id="flavorChart"></canvas>
+                <!-- Progress Bar -->
+                <div class="progress-bar mb-8">
+                    <div class="progress-fill" id="progress-fill" style="width: 11.11%"></div>
+                </div>
+
+                <!-- Step Navigation -->
+                <div class="flex justify-between items-center mb-12">
+                    <button id="prev-step" class="btn btn-secondary" disabled>
+                        ← Previous Step
+                    </button>
+                    <div class="text-center">
+                        <span class="caption text-gray-500">Step</span>
+                        <div class="heading-4">
+                            <span id="current-step">1</span> of <span id="total-steps">9</span>
+                        </div>
                     </div>
-                    <div>
-                        <div class="space-y-4">
-                           <div class="flex items-center">
-                                <label for="creamy-toggle" class="flex items-center cursor-pointer w-full">
-                                    <div class="relative">
-                                        <input type="checkbox" id="creamy-toggle" class="sr-only variation-toggle" data-tip="Make it Creamier: Stir in 1-2 tbsp of heavy cream or malai along with the eggs for a richer, more luscious texture.">
-                                        <div class="block bg-gray-200 w-14 h-8 rounded-full"></div>
-                                        <div class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"></div>
-                                    </div>
-                                    <div class="ml-4 text-stone-700 font-semibold">Creamy & Rich</div>
-                                </label>
-                            </div>
-                           <div class="flex items-center">
-                                <label for="tangy-toggle" class="flex items-center cursor-pointer w-full">
-                                    <div class="relative">
-                                        <input type="checkbox" id="tangy-toggle" class="sr-only variation-toggle" data-tip="Add a Tangy Twist: Squeeze half a lemon or add 1/2 tsp of amchoor (dry mango powder) at the very end of cooking for a fresh, zesty kick.">
-                                        <div class="block bg-gray-200 w-14 h-8 rounded-full"></div>
-                                        <div class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"></div>
-                                    </div>
-                                    <div class="ml-4 text-stone-700 font-semibold">Tangy Twist</div>
-                                </label>
-                            </div>
-                            <div class="flex items-center">
-                                <label for="cheesy-toggle" class="flex items-center cursor-pointer w-full">
-                                    <div class="relative">
-                                        <input type="checkbox" id="cheesy-toggle" class="sr-only variation-toggle" data-tip="Make it Cheesy: Add 1/4 cup of grated cheddar or Amul cheese in the last minute of cooking. Stir until just melted for gooey goodness.">
-                                        <div class="block bg-gray-200 w-14 h-8 rounded-full"></div>
-                                        <div class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"></div>
-                                    </div>
-                                    <div class="ml-4 text-stone-700 font-semibold">Cheesy Delight</div>
-                                </label>
-                            </div>
-                            <div class="flex items-center">
-                                <label for="parsi-toggle" class="flex items-center cursor-pointer w-full">
-                                    <div class="relative">
-                                        <input type="checkbox" id="parsi-toggle" class="sr-only variation-toggle" data-tip="Parsi-Style Akuri: Parsi Akuri is runnier and less spiced. Cook the eggs for a shorter time so they are very soft and moist. You can reduce the chili powder and add more ginger-garlic paste.">
-                                        <div class="block bg-gray-200 w-14 h-8 rounded-full"></div>
-                                        <div class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"></div>
-                                    </div>
-                                    <div class="ml-4 text-stone-700 font-semibold">Parsi-Style (Akuri)</div>
-                                </label>
+                    <button id="next-step" class="btn btn-primary">
+                        Next Step →
+                    </button>
+                </div>
+
+                <!-- Instruction Cards -->
+                <div id="instruction-container">
+                    <!-- Step 1 -->
+                    <div class="card instruction-card active" data-step="1">
+                        <div class="card-header">
+                            <div class="flex items-center gap-4">
+                                <div class="step-dot active">1</div>
+                                <h3 class="heading-3">Prepare the Eggs</h3>
                             </div>
                         </div>
-                        <div id="tips-box" class="mt-6 p-4 bg-amber-100/50 rounded-lg min-h-[100px] text-stone-700 italic transition-opacity duration-300 opacity-50" aria-live="polite">
-                            Select a variation to see a tip here...
+                        <div class="card-body">
+                            <p class="body-large mb-4">
+                                Lightly whisk the eggs in a bowl with a pinch of salt. Don't over-beat; 
+                                you want streaks of yolk and white visible for the best texture.
+                            </p>
+                            <div class="bg-yellow-50 p-4 rounded-lg">
+                                <p class="text-sm font-medium text-yellow-800">
+                                    💡 Pro Tip: Room temperature eggs scramble more evenly than cold ones.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="card instruction-card hidden" data-step="2">
+                        <div class="card-header">
+                            <div class="flex items-center gap-4">
+                                <div class="step-dot">2</div>
+                                <h3 class="heading-3">Sauté the Onions</h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="body-large mb-4">
+                                Heat oil or ghee in a pan over medium heat. Add the chopped onions and sauté 
+                                until they turn soft and translucent, about 3-4 minutes.
+                            </p>
+                            <div class="bg-orange-50 p-4 rounded-lg">
+                                <p class="text-sm font-medium text-orange-800">
+                                    💡 Pro Tip: Properly cooked onions are the foundation of great bhurji flavor.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="card instruction-card hidden" data-step="3">
+                        <div class="card-header">
+                            <div class="flex items-center gap-4">
+                                <div class="step-dot">3</div>
+                                <h3 class="heading-3">Add Aromatics</h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="body-large mb-4">
+                                Add the ginger-garlic paste and green chilies. Sauté for another minute until 
+                                the raw smell disappears and it becomes fragrant.
+                            </p>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <p class="text-sm font-medium text-green-800">
+                                    💡 Pro Tip: This step builds the aromatic base - don't rush it!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Continue with remaining steps... -->
+                    <div class="card instruction-card hidden" data-step="4">
+                        <div class="card-header">
+                            <div class="flex items-center gap-4">
+                                <div class="step-dot">4</div>
+                                <h3 class="heading-3">Cook the Tomatoes</h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="body-large mb-4">
+                                Add the chopped tomatoes and cook until they become soft and mushy, and oil starts 
+                                to separate from the mixture. This is crucial for the flavor base.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card instruction-card hidden" data-step="5">
+                        <div class="card-header">
+                            <div class="flex items-center gap-4">
+                                <div class="step-dot">5</div>
+                                <h3 class="heading-3">Add the Spices</h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="body-large mb-4">
+                                Add the dry spices: turmeric powder, red chili powder, and pav bhaji masala. 
+                                Stir well and cook for 30 seconds to bloom the spices.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card instruction-card hidden" data-step="6">
+                        <div class="card-header">
+                            <div class="flex items-center gap-4">
+                                <div class="step-dot">6</div>
+                                <h3 class="heading-3">Add the Eggs</h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="body-large mb-4">
+                                Lower the heat and pour in the whisked eggs. Let them sit for about 10-15 seconds 
+                                before you start scrambling.
+                            </p>
+                            <div class="bg-red-50 p-4 rounded-lg">
+                                <p class="text-sm font-medium text-red-800">
+                                    💡 Critical: Lower heat prevents the eggs from cooking too quickly!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card instruction-card hidden" data-step="7">
+                        <div class="card-header">
+                            <div class="flex items-center gap-4">
+                                <div class="step-dot">7</div>
+                                <h3 class="heading-3">Scramble Gently</h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="body-large mb-4">
+                                Gently scramble the eggs with a spatula. Cook until the eggs are just set but 
+                                still moist and soft. Avoid overcooking to prevent dry, rubbery bhurji.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card instruction-card hidden" data-step="8">
+                        <div class="card-header">
+                            <div class="flex items-center gap-4">
+                                <div class="step-dot">8</div>
+                                <h3 class="heading-3">Final Touches</h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="body-large mb-4">
+                                Turn off the heat. Stir in the chopped fresh coriander. Check for salt and 
+                                adjust if necessary.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card instruction-card hidden" data-step="9">
+                        <div class="card-header">
+                            <div class="flex items-center gap-4">
+                                <div class="step-dot completed">9</div>
+                                <h3 class="heading-3">Serve & Enjoy!</h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="body-large mb-4">
+                                Serve immediately with hot buttered pav, roti, or toast. Enjoy your delicious 
+                                homemade egg bhurji!
+                            </p>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <p class="text-sm font-medium text-green-800">
+                                    🎉 Congratulations! You've mastered the perfect Egg Bhurji!
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </article>
-        
-        <footer class="text-center mt-12">
-            <p class="text-stone-500">Crafted with ❤️ for the love of good food.</p>
+            </div>
+        </section>
+
+        <!-- Flavor Profile Section -->
+        <section class="py-16 px-6 bg-gray-50">
+            <div class="container mx-auto max-w-4xl">
+                <div class="text-center mb-12">
+                    <h2 class="display-2 mb-6">Flavor Profile & Variations</h2>
+                    <p class="body-large text-gray-600">Explore different flavor profiles and customize your bhurji</p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Flavor Chart -->
+                    <div class="card slide-up">
+                        <div class="card-header text-center">
+                            <h3 class="heading-3 mb-4">Base Recipe Profile</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <canvas id="flavorChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flavor Variations -->
+                    <div class="card slide-up">
+                        <div class="card-header">
+                            <h3 class="heading-3 text-center">Popular Variations</h3>
+                        </div>
+                        <div class="card-body space-y-6">
+                            <div class="p-4 bg-yellow-50 rounded-lg">
+                                <h4 class="heading-4 mb-2 text-yellow-700">🧈 Creamy Mumbai Style</h4>
+                                <p class="text-sm mb-2">Add 2 tbsp butter and 1 tbsp cream at the end</p>
+                                <p class="text-xs text-yellow-600">Rich, buttery, and indulgent</p>
+                            </div>
+                            
+                            <div class="p-4 bg-red-50 rounded-lg">
+                                <h4 class="heading-4 mb-2 text-red-700">🌶️ Spicy Dhaba Style</h4>
+                                <p class="text-sm mb-2">Double the chilies and add 1 tsp red chili flakes</p>
+                                <p class="text-xs text-red-600">Bold, fiery, and authentic</p>
+                            </div>
+                            
+                            <div class="p-4 bg-green-50 rounded-lg">
+                                <h4 class="heading-4 mb-2 text-green-700">🧀 Cheesy Fusion</h4>
+                                <p class="text-sm mb-2">Fold in grated cheese just before serving</p>
+                                <p class="text-xs text-green-600">Modern twist with melted goodness</p>
+                            </div>
+                            
+                            <div class="p-4 bg-purple-50 rounded-lg">
+                                <h4 class="heading-4 mb-2 text-purple-700">🌿 Parsi Akuri Style</h4>
+                                <p class="text-sm mb-2">Add fresh dill and cook on very low heat</p>
+                                <p class="text-xs text-purple-600">Delicate, herbaceous, and creamy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-12 px-6 bg-gray-900 text-white">
+            <div class="container mx-auto max-w-4xl text-center">
+                <div class="mb-8">
+                    <h3 class="heading-2 mb-4">Egg-cellent Work!</h3>
+                    <p class="body-large text-gray-300 mb-6">
+                        You've mastered the art of perfect Egg Bhurji. Time to explore more recipes!
+                    </p>
+                    <div class="flex justify-center gap-4">
+                        <a href="../index.html" class="btn btn-secondary">← Back to Recipes</a>
+                        <a href="beef-mandi.html" class="btn btn-primary">Try Beef Mandi Next →</a>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-700 pt-8">
+                    <p class="text-gray-400 mb-4">Built with ❤️ for food lovers everywhere</p>
+                    <p class="text-gray-500 body-small">
+                        Interactive recipes • No downloads required • Works on all devices
+                    </p>
+                </div>
+            </div>
         </footer>
 
     </main>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const recipeData = {
-                baseServings: 2,
-                ingredients: [
-                    { name: 'Eggs', base_quantity: 4, unit: '' },
-                    { name: 'Onions, finely chopped', base_quantity: 2, unit: 'medium' },
-                    { name: 'Tomatoes, finely chopped', base_quantity: 1, unit: 'large' },
-                    { name: 'Green Chilies, slit', base_quantity: 2, unit: '' },
-                    { name: 'Ginger-Garlic Paste', base_quantity: 1, unit: 'tsp' },
-                    { name: 'Turmeric Powder', base_quantity: 0.5, unit: 'tsp' },
-                    { name: 'Red Chili Powder', base_quantity: 0.5, unit: 'tsp' },
-                    { name: 'Pav Bhaji Masala (Secret Ingredient!)', base_quantity: 1, unit: 'tsp' },
-                    { name: 'Oil or Ghee', base_quantity: 2, unit: 'tbsp' },
-                    { name: 'Fresh Coriander, chopped', base_quantity: 2, unit: 'tbsp' },
-                    { name: 'Salt', base_quantity: 1, unit: 'to taste' },
-                ],
-                instructions: [
-                    "Lightly whisk the eggs in a bowl with a pinch of salt. Don't over-beat; you want streaks of yolk and white. Set aside.",
-                    "Heat oil or ghee in a pan over medium heat. Add the chopped onions and sauté until they turn soft and translucent, about 3-4 minutes.",
-                    "Add the ginger-garlic paste and green chilies. Sauté for another minute until the raw smell disappears and it becomes fragrant.",
-                    "Add the chopped tomatoes and cook until they become soft and mushy, and oil starts to separate from the mixture. This is a key step for the flavor base.",
-                    "Add the dry spices: turmeric powder, red chili powder, and the pav bhaji masala. Stir well and cook for 30 seconds.",
-                    "Lower the heat, pour in the whisked eggs. Let them sit for about 10-15 seconds before you start scrambling.",
-                    "Gently scramble the eggs with a spatula. Cook until the eggs are just set but still moist and soft. Avoid overcooking to prevent dry, rubbery bhurji.",
-                    "Turn off the heat. Stir in the chopped fresh coriander. Check for salt and adjust if necessary.",
-                    "Serve immediately with hot buttered pav, roti, or toast. Enjoy your delicious homemade egg bhurji!",
-                ],
-            };
+        document.addEventListener('DOMContentLoaded', () => {
+            // Serving calculator functionality
+            const servingsInput = document.getElementById('servings');
+            const decreaseBtn = document.getElementById('decrease-servings');
+            const increaseBtn = document.getElementById('increase-servings');
+            const ingredients = document.querySelectorAll('[data-base-qty]');
 
-            let currentServings = 2;
-            let currentStep = 0;
+            function updateQuantities() {
+                const baseServings = 2;
+                const desiredServings = parseFloat(servingsInput.value) || 1;
+                const factor = desiredServings / baseServings;
 
-            const servingsValue = document.getElementById('servings-value');
-            const servingsDisplay = document.getElementById('servings-display');
-            const ingredientsList = document.getElementById('ingredients-list');
-            const instructionsContainer = document.getElementById('instructions-container');
-            const prevStepBtn = document.getElementById('prev-step');
-            const nextStepBtn = document.getElementById('next-step');
-
-            function formatQuantity(quantity) {
-                 if (quantity === null || isNaN(quantity)) return '';
-                 if (quantity < 1 && quantity > 0) {
-                    if (Math.abs(quantity - 0.25) < 0.01) return '¼';
-                    if (Math.abs(quantity - 0.5) < 0.01) return '½';
-                    if (Math.abs(quantity - 0.75) < 0.01) return '¾';
-                    return parseFloat(quantity.toFixed(2));
-                }
-                return parseFloat(quantity.toFixed(2)).toString().replace(/\.00$/, '').replace(/\.50$/, '.5');
-            }
-
-            function renderIngredients() {
-                ingredientsList.innerHTML = '';
-                const multiplier = currentServings / recipeData.baseServings;
-                
-                recipeData.ingredients.forEach((ing, index) => {
-                    let quantity;
-                    if (ing.unit === 'to taste') {
-                        quantity = '';
-                    } else {
-                        const calculatedQty = ing.base_quantity * multiplier;
-                        quantity = formatQuantity(calculatedQty);
+                ingredients.forEach(item => {
+                    const baseQty = parseFloat(item.dataset.baseQty);
+                    const unit = item.dataset.unit || '';
+                    if (!isNaN(baseQty)) {
+                        let newQty = baseQty * factor;
+                        if (newQty % 1 !== 0) {
+                            newQty = newQty.toFixed(1);
+                        }
+                        item.textContent = newQty.toString().replace(/\.0$/, '') + unit;
                     }
-                    
-                    const li = document.createElement('li');
-                    li.innerHTML = `
-                        <label for="ing-${index}" class="flex items-center cursor-pointer group">
-                            <input type="checkbox" id="ing-${index}" class="sr-only ingredient-checkbox">
-                            <span class="w-5 h-5 border-2 border-stone-300 rounded-md mr-3 flex-shrink-0 flex items-center justify-center transition-colors">
-                                <span class="text-white text-sm">✔</span>
-                            </span>
-                            <span class="flex-grow"><span class="font-medium">${quantity} ${ing.unit}</span> ${ing.name}</span>
-                        </label>
-                    `;
-                    ingredientsList.appendChild(li);
                 });
             }
 
-            function renderInstructions() {
-                instructionsContainer.innerHTML = '';
-                recipeData.instructions.forEach((step, index) => {
-                    const stepEl = document.createElement('div');
-                    stepEl.classList.add('instruction-card', 'bg-stone-50', 'p-4', 'rounded-lg', 'border-l-4', 'border-stone-200');
-                    stepEl.dataset.step = index;
-                    stepEl.innerHTML = `<p><span class="font-bold text-amber-700">Step ${index + 1}:</span> ${step}</p>`;
-                    instructionsContainer.appendChild(stepEl);
-                });
-                updateActiveStep();
-            }
+            // Serving adjuster buttons
+            decreaseBtn.addEventListener('click', () => {
+                const current = parseInt(servingsInput.value) || 1;
+                if (current > 1) {
+                    servingsInput.value = current - 1;
+                    updateQuantities();
+                }
+            });
 
-            function updateActiveStep() {
-                document.querySelectorAll('.instruction-card').forEach((card, index) => {
-                    if (index === currentStep) {
+            increaseBtn.addEventListener('click', () => {
+                const current = parseInt(servingsInput.value) || 1;
+                if (current < 8) {
+                    servingsInput.value = current + 1;
+                    updateQuantities();
+                }
+            });
+
+            servingsInput.addEventListener('input', updateQuantities);
+            updateQuantities(); // Initial call
+
+            // Step navigation functionality
+            let currentStep = 1;
+            const totalSteps = 9;
+            const prevBtn = document.getElementById('prev-step');
+            const nextBtn = document.getElementById('next-step');
+            const currentStepDisplay = document.getElementById('current-step');
+            const progressFill = document.getElementById('progress-fill');
+            const instructionCards = document.querySelectorAll('.instruction-card');
+
+            function updateStep() {
+                // Update progress bar
+                const progress = (currentStep / totalSteps) * 100;
+                progressFill.style.width = `${progress}%`;
+
+                // Update step display
+                currentStepDisplay.textContent = currentStep;
+
+                // Update button states
+                prevBtn.disabled = currentStep === 1;
+                nextBtn.disabled = currentStep === totalSteps;
+
+                if (currentStep === totalSteps) {
+                    nextBtn.textContent = 'Complete! 🎉';
+                } else {
+                    nextBtn.textContent = 'Next Step →';
+                }
+
+                // Show/hide instruction cards
+                instructionCards.forEach((card, index) => {
+                    const stepNumber = index + 1;
+                    if (stepNumber === currentStep) {
+                        card.classList.remove('hidden');
                         card.classList.add('active');
-                        card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                     } else {
+                        card.classList.add('hidden');
                         card.classList.remove('active');
                     }
                 });
 
-                prevStepBtn.disabled = currentStep === 0;
-                prevStepBtn.classList.toggle('opacity-50', currentStep === 0);
-                nextStepBtn.disabled = currentStep === recipeData.instructions.length - 1;
-                nextStepBtn.classList.toggle('opacity-50', currentStep === recipeData.instructions.length - 1);
+                // Update step dots
+                document.querySelectorAll('.step-dot').forEach((dot, index) => {
+                    const stepNumber = index + 1;
+                    dot.classList.remove('active', 'completed');
+                    
+                    if (stepNumber === currentStep) {
+                        dot.classList.add('active');
+                    } else if (stepNumber < currentStep) {
+                        dot.classList.add('completed');
+                    }
+                });
             }
-            
-            document.getElementById('servings-increment').addEventListener('click', () => {
-                currentServings++;
-                servingsValue.textContent = currentServings;
-                servingsDisplay.textContent = currentServings;
-                renderIngredients();
-            });
 
-            document.getElementById('servings-decrement').addEventListener('click', () => {
-                if (currentServings > 1) {
-                    currentServings--;
-                    servingsValue.textContent = currentServings;
-                    servingsDisplay.textContent = currentServings;
-                    renderIngredients();
-                }
-            });
-            
-            nextStepBtn.addEventListener('click', () => {
-                if (currentStep < recipeData.instructions.length - 1) {
-                    currentStep++;
-                    updateActiveStep();
-                }
-            });
-
-            prevStepBtn.addEventListener('click', () => {
-                if (currentStep > 0) {
+            prevBtn.addEventListener('click', () => {
+                if (currentStep > 1) {
                     currentStep--;
-                    updateActiveStep();
+                    updateStep();
                 }
             });
-            
-            const flavorCtx = document.getElementById('flavorChart').getContext('2d');
-            const flavorChart = new Chart(flavorCtx, {
+
+            nextBtn.addEventListener('click', () => {
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                    updateStep();
+                } else {
+                    // Recipe completed - could redirect or show completion message
+                    alert('🎉 Congratulations! You\'ve completed the Egg Bhurji recipe!');
+                }
+            });
+
+            // Initialize flavor profile chart
+            const ctx = document.getElementById('flavorChart').getContext('2d');
+            new Chart(ctx, {
                 type: 'radar',
                 data: {
-                    labels: ['Spicy', 'Savory', 'Tangy', 'Aromatic', 'Creamy'],
+                    labels: ['Spicy', 'Savory', 'Tangy', 'Rich', 'Aromatic', 'Creamy'],
                     datasets: [{
-                        label: 'Flavor Profile',
-                        data: [6, 8, 4, 7, 3],
-                        backgroundColor: 'rgba(245, 158, 11, 0.2)',
-                        borderColor: 'rgba(217, 119, 6, 1)',
+                        label: 'Base Recipe',
+                        data: [6, 8, 4, 6, 9, 5],
+                        backgroundColor: 'rgba(249, 115, 22, 0.2)',
+                        borderColor: 'rgba(249, 115, 22, 1)',
                         borderWidth: 2,
-                        pointBackgroundColor: 'rgba(217, 119, 6, 1)',
+                        pointBackgroundColor: 'rgba(249, 115, 22, 1)',
                         pointBorderColor: '#fff',
                         pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: 'rgba(217, 119, 6, 1)'
+                        pointHoverBorderColor: 'rgba(249, 115, 22, 1)'
                     }]
                 },
                 options: {
+                    responsive: true,
                     maintainAspectRatio: false,
-                    scales: {
-                        r: {
-                            angleLines: { color: 'rgba(74, 63, 53, 0.2)' },
-                            grid: { color: 'rgba(74, 63, 53, 0.2)' },
-                            pointLabels: { font: { size: 14, family: 'Inter' }, color: '#4A3F35' },
-                            ticks: {
-                                backdropColor: '#FDF8F2',
-                                color: '#78716C',
-                                stepSize: 2,
-                                beginAtZero: true,
-                                max: 10
-                            }
-                        }
-                    },
                     plugins: {
                         legend: {
                             display: false
                         }
+                    },
+                    scales: {
+                        r: {
+                            beginAtZero: true,
+                            max: 10,
+                            ticks: {
+                                display: false
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            angleLines: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            pointLabels: {
+                                color: '#6b7280',
+                                font: {
+                                    size: 12,
+                                    weight: '500'
+                                }
+                            }
+                        }
                     }
                 }
             });
 
-            const toggles = document.querySelectorAll('.variation-toggle');
-            const tipsBox = document.getElementById('tips-box');
-            toggles.forEach(toggle => {
-                const parent = toggle.closest('label');
-                const dot = parent.querySelector('.dot');
-                const bg = parent.querySelector('.relative > div:first-of-type');
-                
-                toggle.addEventListener('change', () => {
-                    let anyToggleOn = false;
-                    if (toggle.checked) {
-                        anyToggleOn = true;
-                        dot.style.transform = 'translateX(100%)';
-                        bg.classList.remove('bg-gray-200');
-                        bg.classList.add('bg-amber-500');
-                        tipsBox.textContent = toggle.dataset.tip;
-                        tipsBox.classList.remove('opacity-50');
-                    }
-                    
-                    toggles.forEach(otherToggle => {
-                        if (otherToggle !== toggle) {
-                            otherToggle.checked = false;
-                            const otherParent = otherToggle.closest('label');
-                            otherParent.querySelector('.dot').style.transform = 'translateX(0)';
-                            otherParent.querySelector('.relative > div:first-of-type').classList.remove('bg-amber-500');
-                            otherParent.querySelector('.relative > div:first-of-type').classList.add('bg-gray-200');
-                        }
-                    });
-                    
-                    if (!anyToggleOn) {
-                        tipsBox.textContent = 'Select a variation to see a tip here...';
-                        tipsBox.classList.add('opacity-50');
-                         dot.style.transform = 'translateX(0)';
-                        bg.classList.remove('bg-amber-500');
-                        bg.classList.add('bg-gray-200');
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
                     }
                 });
             });
 
-            renderIngredients();
-            renderInstructions();
+            // Intersection observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements with animation classes
+            document.querySelectorAll('.slide-up, .fade-in').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                observer.observe(el);
+            });
+
+            // Initialize with first step
+            updateStep();
         });
     </script>
 </body>
