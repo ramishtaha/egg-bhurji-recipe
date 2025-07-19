@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Ultimate Egg Bhurji Recipe | Interactive Guide</title>
+    <title>The Ultimate Egg Bhurji Recipe | Interactive Guide | Culinary Craft</title>
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="The ultimate interactive guide to making the tastiest Egg Bhurji (Indian Scrambled Eggs). Adjust serving sizes, follow step-by-step instructions, and explore flavor variations like Mumbai Street-Style and Parsi Akuri.">
@@ -14,17 +14,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Chosen Palette: Warm Saffron & Earth -->
-    <!-- Application Structure Plan: The application is structured as a guided culinary journey. It starts with an overview (Quick Stats), moves to preparation (Interactive Ingredients), then to the cooking process (Guided Instructions), and finally to personalization (Flavor Customization & Pro-Tips). This task-oriented flow (Prep -> Cook -> Customize) was chosen because it mirrors how a person actually cooks. Instead of a static page, this structure makes the recipe an interactive tool, reducing cognitive load by focusing the user on one stage at a time (e.g., highlighting only the current cooking step). This is more usable and less overwhelming than a long, scrollable document. -->
-    <!-- Visualization & Content Choices: 
-        1. Report Info: Servings & Ingredient Quantities -> Goal: Organize, Inform -> Viz/Presentation: Interactive HTML list with a stepper control -> Interaction: Clicking +/- on the serving selector dynamically recalculates and updates all ingredient quantities in the list -> Justification: This is a high-utility feature that solves a common user problem (scaling a recipe) directly and intuitively -> Library/Method: Vanilla JS DOM manipulation.
-        2. Report Info: Cooking Steps -> Goal: Guide, Change -> Viz/Presentation: Numbered cards for each step -> Interaction: 'Previous' and 'Next' buttons navigate between steps, highlighting the active one with a distinct style. -> Justification: This "focus mode" prevents users from losing their place, which is crucial when cooking. It turns a passive list into an active guide -> Library/Method: Vanilla JS state management and class toggling.
-        3. Report Info: Flavor Profile (Spicy, Savory, Tangy) -> Goal: Inform, Compare -> Viz/Presentation: Radar Chart -> Interaction: The chart provides a quick visual summary of the base recipe's taste. Toggles below allow users to explore variations, with corresponding tips appearing in a text box. -> Justification: The chart is more engaging than a simple text description. The toggles encourage exploration and customization in a structured way -> Library/Method: Chart.js (Canvas).
-        4. Report Info: Key stats (Time, Difficulty) -> Goal: Inform -> Viz/Presentation: Styled cards with Unicode characters -> Interaction: None -> Justification: Provides essential information at a glance for quick decision-making. -> Library/Method: HTML/CSS/Unicode.
-    -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/design-system.css">
     
     <!-- JSON-LD Structured Data for Recipe SEO -->
     <script type="application/ld+json">
@@ -61,44 +52,6 @@
         "2 tbsp Fresh Coriander, chopped",
         "Salt to taste"
       ],
-      "recipeInstructions": [
-        {
-          "@type": "HowToStep",
-          "text": "Lightly whisk the eggs in a bowl with a pinch of salt. Don't over-beat; you want streaks of yolk and white. Set aside."
-        },
-        {
-          "@type": "HowToStep",
-          "text": "Heat oil or ghee in a pan over medium heat. Add the chopped onions and sauté until they turn soft and translucent, about 3-4 minutes."
-        },
-        {
-          "@type": "HowToStep",
-          "text": "Add the ginger-garlic paste and green chilies. Sauté for another minute until the raw smell disappears and it becomes fragrant."
-        },
-        {
-          "@type": "HowToStep",
-          "text": "Add the chopped tomatoes and cook until they become soft and mushy, and oil starts to separate from the mixture. This is a key step for the flavor base."
-        },
-        {
-          "@type": "HowToStep",
-          "text": "Add the dry spices: turmeric powder, red chili powder, and the pav bhaji masala. Stir well and cook for 30 seconds."
-        },
-        {
-          "@type": "HowToStep",
-          "text": "Lower the heat, pour in the whisked eggs. Let them sit for about 10-15 seconds before you start scrambling."
-        },
-        {
-          "@type": "HowToStep",
-          "text": "Gently scramble the eggs with a spatula. Cook until the eggs are just set but still moist and soft. Avoid overcooking to prevent dry, rubbery bhurji."
-        },
-        {
-          "@type": "HowToStep",
-          "text": "Turn off the heat. Stir in the chopped fresh coriander. Check for salt and adjust if necessary."
-        },
-        {
-          "@type": "HowToStep",
-          "text": "Serve immediately with hot buttered pav, roti, or toast. Enjoy your delicious homemade egg bhurji!"
-        }
-      ],
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.8",
@@ -106,48 +59,32 @@
       }
     }
     </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between">
+                <a href="../index.html" class="nav-brand">
+                    🍳 Culinary Craft
+                </a>
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="../index.html#recipes" class="nav-link">← Back to Recipes</a>
+                    <a href="#ingredients" class="nav-link">Ingredients</a>
+                    <a href="#instructions" class="nav-link">Instructions</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #FDF8F2;
-            color: #4A3F35;
-        }
-        h1, h2, h3 {
-            font-family: 'Lora', serif;
-            font-weight: 600;
-        }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 300px;
-            max-height: 350px;
-        }
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 350px;
-            }
-        }
-        .instruction-card {
-            transition: all 0.3s ease-in-out;
-            border: 2px solid transparent;
-        }
-        .instruction-card.active {
-            border-color: #F59E0B;
-            transform: scale(1.02);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        .nav-button {
-            transition: background-color 0.2s, transform 0.2s;
-        }
-        .nav-button:hover {
-            transform: translateY(-2px);
-        }
-        .ingredient-checkbox:checked + label span:first-child {
-            background-color: #F59E0B;
+    <!-- Breadcrumb -->
+    <div class="container mx-auto max-w-6xl px-6 py-4">
+        <nav class="breadcrumb">
+            <a href="../index.html" class="hover:text-orange-600">Home</a>
+            <span class="breadcrumb-separator">→</span>
+            <span>Egg Bhurji</span>
+        </nav>
+    </div>
             border-color: #F59E0B;
         }
         .ingredient-checkbox:checked + label span:last-child {

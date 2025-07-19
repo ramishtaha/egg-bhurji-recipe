@@ -3,295 +3,755 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Ultimate Beef Mandi Masterclass</title>
+    <title>The Ultimate Beef Mandi Masterclass | Culinary Craft</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Master the art of authentic Beef Mandi with this interactive guide. Features pressure cooker methods, spice blend options, dynamic serving calculator, and traditional smoking techniques.">
+    <meta name="keywords" content="beef mandi, mandi recipe, arabic rice, pressure cooker mandi, hawaij spice, traditional smoking, meal prep">
+    <meta name="author" content="Culinary Craft">
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <!-- Chosen Palette: Rich Umber & Parchment -->
-    <!-- Application Structure Plan: The application is redesigned as a long-form, scrollable guide, breaking the recipe into thematic, digestible sections. This replaces the shallow tab structure with a more narrative flow: 1) Introduction, 2) Flavor Blueprint (theory), 3) Shopping & Prep (actionable list), 4) The Masterclass (step-by-step interactive instructions), 5) Accompaniments, and 6) Meal Prep. This structure mirrors a cooking class, guiding the user from theory to practice to storage. Key interactions include a spice blend switcher, a more detailed serving calculator, and a stepper for the cooking process. This design provides a richer, more educational experience aligned with the detailed source report. -->
-    <!-- Visualization & Content Choices: Report Info: Hawaij spice blend recipes -> Goal: Compare/Instruct -> Viz/Method: Interactive card with buttons to toggle between "Gold Standard" and "Quick-Fix" recipes. Interaction: JS toggles visibility of recipe details. Justification: Allows easy comparison without cluttering the page. Report Info: Step-by-step cooking process -> Goal: Guide -> Viz/Method: Vertical stepper with HTML/CSS. Interaction: JS can be used to track progress, but a visual guide is the primary goal. Justification: Breaks down a complex process into manageable, sequential steps. Report Info: Meal prep strategy -> Goal: Instruct/Organize -> Viz/Method: Visually distinct cards with icons. Interaction: None. Justification: Clear, scannable presentation of critical storage information. -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #FDFBF7; /* A warm off-white */
-        }
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-        }
-        .section-title {
-            border-bottom: 2px solid #D2B48C; /* Tan */
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-            color: #5D4037; /* Brown */
-        }
-        .blend-btn-active {
-            background-color: #5D4037; /* Brown */
-            color: #FFFFFF;
-        }
-        .blend-btn-inactive {
-            background-color: #F5F5F5; /* Gray-100 */
-            color: #5D4037; /* Brown */
-            border: 1px solid #D2B48C;
-        }
-        .step {
-            border-left: 3px solid #D2B48C;
-            transition: all 0.3s ease;
-        }
-        .step-title {
-            position: relative;
-            padding-left: 2rem;
-        }
-        .step-title::before {
-            content: '';
-            position: absolute;
-            left: -0.7rem;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 1.25rem;
-            height: 1.25rem;
-            border-radius: 9999px;
-            background-color: #FFFFFF;
-            border: 3px solid #D2B48C;
-            transition: all 0.3s ease;
-        }
-        input[type="checkbox"]:checked {
-            background-color: #8D6E63; /* Brown-300 */
-            border-color: #5D4037;
-        }
-        input[type="checkbox"]:checked + span {
-            text-decoration: line-through;
-            color: #78716C; /* stone-500 */
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/design-system.css">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Recipe",
+      "name": "The Ultimate Beef Mandi Masterclass",
+      "description": "A comprehensive guide to creating authentic Beef Mandi using modern techniques with traditional flavor. Features pressure cooker methods and traditional smoking.",
+      "keywords": "beef mandi, arabic rice, pressure cooker, hawaij spice, smoking",
+      "author": {
+        "@type": "Person",
+        "name": "Culinary Craft"
+      },
+      "prepTime": "PT30M",
+      "cookTime": "PT2H30M",
+      "totalTime": "PT3H",
+      "recipeYield": "4-6 servings",
+      "recipeCategory": "Main Course",
+      "recipeCuisine": "Middle Eastern, Arabic"
+    }
+    </script>
 </head>
-<body class="text-stone-800">
-
-    <div class="container mx-auto max-w-5xl p-4 sm:p-6 lg:p-8">
-
-        <header class="text-center mb-12">
-            <h1 class="text-5xl font-bold text-stone-900">The Bachelor's Beef Mandi</h1>
-            <p class="text-xl text-stone-600 mt-3">Your weekend project for a week of incredible meals.</p>
-        </header>
-
-        <!-- Introduction Section -->
-        <section class="mb-12 bg-white rounded-2xl shadow-lg p-8">
-            <p class="text-lg text-stone-700 leading-relaxed">
-                This guide transforms the spectacular, aromatic, and deeply satisfying dish of Beef Mandi from an ambitious idea into a foolproof reality. We'll replicate the traditional methods using a pressure cooker for speed and an oven for that perfect finish. This is more than a recipe; it's a complete culinary strategy designed to help you cook once and feast for a week.
-            </p>
-        </section>
-
-        <!-- Flavor Blueprint Section -->
-        <section id="blueprint" class="mb-12">
-            <h2 class="text-4xl font-bold section-title">The Flavor Blueprint</h2>
-            <div class="grid md:grid-cols-3 gap-8 mb-8">
-                <div class="bg-white p-6 rounded-lg shadow">
-                    <h3 class="text-2xl font-bold mb-2 text-amber-800">The Meat & Broth</h3>
-                    <p>We use bone-in beef to create a rich, flavorful broth (*yakhni*). This broth is the liquid gold that will cook our rice, infusing every grain with deep, savory flavor.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow">
-                    <h3 class="text-2xl font-bold mb-2 text-amber-800">The Rice</h3>
-                    <p>Long-grain Basmati is key. Rinsing and soaking removes excess starch, ensuring fluffy, separate grains that perfectly absorb the broth without becoming mushy.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow">
-                    <h3 class="text-2xl font-bold mb-2 text-amber-800">The Smoke (*Tadween*)</h3>
-                    <p>The final, magical step. A hot piece of charcoal creates a fragrant smoke that infuses the entire dish with the authentic, unmistakable aroma of traditional Mandi.</p>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between">
+                <a href="../index.html" class="nav-brand">
+                    🍳 Culinary Craft
+                </a>
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="../index.html#recipes" class="nav-link">← Back to Recipes</a>
+                    <a href="#ingredients" class="nav-link">Ingredients</a>
+                    <a href="#masterclass" class="nav-link">Instructions</a>
                 </div>
             </div>
-            <div class="bg-white p-6 rounded-2xl shadow-lg">
-                <h3 class="text-3xl font-bold mb-4 text-center text-stone-800">Your Secret Weapon: Hawaij Spice Blend</h3>
-                <div class="flex justify-center gap-4 mb-4">
-                    <button id="gold-btn" class="blend-btn-active py-2 px-6 rounded-full font-semibold transition">Gold Standard</button>
-                    <button id="quick-btn" class="blend-btn-inactive py-2 px-6 rounded-full font-semibold transition">Quick-Fix</button>
-                </div>
-                <div id="gold-recipe" class="space-y-4">
-                    <p class="text-center text-stone-600">This method provides the most aromatic and potent flavor by toasting whole spices before grinding.</p>
-                    <ul class="list-disc list-inside bg-amber-50 p-4 rounded-lg">
-                        <li>2 tbsp Cumin Seeds</li>
-                        <li>1.5 tbsp Coriander Seeds</li>
-                        <li>1 tbsp Black Peppercorns</li>
-                        <li>1 tsp Whole Cloves</li>
-                        <li>10-12 Green Cardamom Pods</li>
-                        <li>2 tbsp Ground Turmeric</li>
-                    </ul>
-                    <p><strong>Instructions:</strong> Toast whole spices (except turmeric) in a dry pan for 2-3 mins until fragrant. Cool, then grind to a fine powder. Mix with turmeric.</p>
-                </div>
-                <div id="quick-recipe" class="hidden space-y-4">
-                    <p class="text-center text-stone-600">This simplified version uses pre-ground spices for maximum convenience and great flavor.</p>
-                    <ul class="list-disc list-inside bg-amber-50 p-4 rounded-lg">
-                        <li>2 tbsp Cumin Powder</li>
-                        <li>1.5 tbsp Coriander Powder</li>
-                        <li>1 tbsp Black Pepper Powder</li>
-                        <li>1 tsp Ground Cloves</li>
-                        <li>1.5 tsp Cardamom Powder</li>
-                        <li>2 tbsp Turmeric Powder</li>
-                    </ul>
-                     <p><strong>Instructions:</strong> Combine all ground spices in a small bowl and whisk thoroughly until uniform.</p>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Shopping & Prep Section -->
-        <section id="shopping" class="mb-12 bg-white rounded-2xl shadow-lg p-8">
-            <h2 class="text-4xl font-bold section-title">Shopping & Preparation</h2>
-            <div class="flex items-center gap-4 bg-amber-100 p-4 rounded-lg mb-6">
-                <label for="servings" class="font-medium text-lg text-stone-700">Number of Meals:</label>
-                <input type="number" id="servings" value="4" min="1" max="10" class="w-24 p-2 border border-stone-300 rounded-md focus:ring-amber-500 focus:border-amber-500 text-lg">
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="shopping-list">
-                <div>
-                    <h3 class="text-xl font-semibold text-stone-700 mb-3 border-b pb-2">Main Components</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded mr-3"><span data-base-qty="750" data-unit="g">750g</span><span>&nbsp;Beef Shank, bone-in (Nalli)</span></li>
-                        <li class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded mr-3"><span data-base-qty="2" data-unit=" cups">2 cups</span><span>&nbsp;Long-Grain Basmati Rice</span></li>
-                        <li class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded mr-3"><span data-base-qty="1" data-unit="">1</span><span>&nbsp;large Red Onion</span></li>
-                        <li class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded mr-3"><span data-base-qty="4" data-unit="">4</span><span>&nbsp;cloves Garlic</span></li>
-                        <li class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded mr-3"><span data-base-qty="1" data-unit=" tbsp">1 tbsp</span><span>&nbsp;Ginger-Garlic Paste</span></li>
-                        <li class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded mr-3"><span data-base-qty="3" data-unit=" tbsp">3 tbsp</span><span>&nbsp;Ghee or Vegetable Oil</span></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold text-stone-700 mb-3 border-b pb-2">Spices & Smoke</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded mr-3"><span data-base-qty="3" data-unit=" tbsp">3 tbsp</span><span>&nbsp;Homemade Hawaij Blend</span></li>
-                        <li class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded mr-3"><span data-base-qty="1" data-unit="">1</span><span>&nbsp;(2-inch) Cinnamon Stick</span></li>
-                        <li class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded mr-3"><span data-base-qty="4" data-unit="">4</span><span>&nbsp;Green Cardamom Pods</span></li>
-                        <li class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded mr-3"><span data-base-qty="4" data-unit="">4</span><span>&nbsp;Cloves</span></li>
-                        <li class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded mr-3"><span data-base-qty="2" data-unit="">2</span><span>&nbsp;Bay Leaves</span></li>
-                        <li class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded mr-3"><span data-base-qty="1" data-unit="">1</span><span>&nbsp;Dried Lime (Loomi)</span></li>
-                        <li class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded mr-3"><span data-base-qty="1" data-unit="">1</span><span>&nbsp;small piece Hardwood Charcoal</span></li>
-                    </ul>
-                </div>
-                 <div>
-                    <h3 class="text-xl font-semibold text-stone-700 mb-3 border-b pb-2">Accompaniments</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded mr-3"><span data-base-qty="2" data-unit="">2</span><span>&nbsp;medium Ripe Tomatoes</span></li>
-                        <li class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded mr-3"><span data-base-qty="2" data-unit="">2</span><span>&nbsp;Green Chilies</span></li>
-                        <li class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded mr-3"><span data-base-qty="0.5" data-unit=" bunch">0.5 bunch</span><span>&nbsp;Fresh Coriander (Dhaniya)</span></li>
-                        <li class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded mr-3"><span data-base-qty="1" data-unit="">1</span><span>&nbsp;Lemon</span></li>
-                         <li class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded mr-3"><span data-base-qty="1.5" data-unit=" cups">1.5 cups</span><span>&nbsp;Plain Yogurt (Dahi)</span></li>
-                        <li class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded mr-3"><span data-base-qty="0.5" data-unit="">0.5</span><span>&nbsp;medium Cucumber</span></li>
-                    </ul>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container mx-auto max-w-6xl px-6 py-4">
+        <nav class="breadcrumb">
+            <a href="../index.html" class="hover:text-orange-600">Home</a>
+            <span class="breadcrumb-separator">→</span>
+            <span>Beef Mandi</span>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="py-16 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12 fade-in">
+                <div class="text-8xl mb-6">🍛</div>
+                <h1 class="display-1 mb-6">The Bachelor's Beef Mandi</h1>
+                <p class="body-large text-gray-600 max-w-3xl mx-auto mb-8">
+                    Your weekend project for a week of incredible meals. Master the spectacular, aromatic, 
+                    and deeply satisfying dish of Beef Mandi using modern techniques with traditional flavor.
+                </p>
+                
+                <!-- Recipe Stats -->
+                <div class="recipe-stats max-w-2xl mx-auto mb-8">
+                    <div class="stat-item">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-value">3 hrs</div>
+                        <div class="stat-label">Total Time</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-value">4-6</div>
+                        <div class="stat-label">Servings</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-value">Medium</div>
+                        <div class="stat-label">Difficulty</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">🔥</div>
+                        <div class="stat-value">650</div>
+                        <div class="stat-label">Calories</div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="py-12 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <div class="card slide-up">
+                <div class="card-body">
+                    <p class="body-large text-gray-700 leading-relaxed">
+                        This guide transforms the spectacular, aromatic, and deeply satisfying dish of Beef Mandi from an ambitious idea into a foolproof reality. We'll replicate the traditional methods using a pressure cooker for speed and an oven for that perfect finish. This is more than a recipe; it's a complete culinary strategy designed to help you cook once and feast for a week.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flavor Blueprint Section -->
+    <section id="blueprint" class="py-16 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12">
+                <h2 class="display-2 mb-6">The Flavor Blueprint</h2>
+                <p class="body-large text-gray-600">Understanding the foundation of perfect Mandi</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8 mb-12">
+                <div class="card slide-up">
+                    <div class="card-body text-center">
+                        <div class="text-4xl mb-4">🥩</div>
+                        <h3 class="heading-3 mb-4 text-orange-600">The Meat & Broth</h3>
+                        <p class="text-gray-600">
+                            We use bone-in beef to create a rich, flavorful broth (*yakhni*). This broth is the liquid gold 
+                            that will cook our rice, infusing every grain with deep, savory flavor.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card slide-up">
+                    <div class="card-body text-center">
+                        <div class="text-4xl mb-4">🍚</div>
+                        <h3 class="heading-3 mb-4 text-orange-600">The Rice</h3>
+                        <p class="text-gray-600">
+                            Long-grain Basmati is key. Rinsing and soaking removes excess starch, ensuring fluffy, 
+                            separate grains that perfectly absorb the broth without becoming mushy.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card slide-up">
+                    <div class="card-body text-center">
+                        <div class="text-4xl mb-4">💨</div>
+                        <h3 class="heading-3 mb-4 text-orange-600">The Smoke (*Tadween*)</h3>
+                        <p class="text-gray-600">
+                            The final, magical step. A hot piece of charcoal creates a fragrant smoke that infuses 
+                            the entire dish with the authentic, unmistakable aroma of traditional Mandi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spice Blend Switcher -->
+            <div class="card slide-up">
+                <div class="card-header text-center">
+                    <h3 class="heading-2 mb-4">Your Secret Weapon: Hawaij Spice Blend</h3>
+                    <div class="flex justify-center gap-4 mb-6">
+                        <button id="gold-btn" class="btn btn-primary">Gold Standard</button>
+                        <button id="quick-btn" class="btn btn-secondary">Quick-Fix</button>
+                    </div>
+                </div>
+                
+                <div class="card-body">
+                    <div id="gold-recipe" class="space-y-6">
+                        <p class="text-center text-gray-600 body-large">
+                            This method provides the most aromatic and potent flavor by toasting whole spices before grinding.
+                        </p>
+                        <div class="ingredient-list">
+                            <h4 class="heading-4 mb-4">Ingredients:</h4>
+                            <div class="space-y-3">
+                                <div class="ingredient-item">
+                                    <span class="quantity-highlight">2 tbsp</span>
+                                    <span>Cumin Seeds</span>
+                                </div>
+                                <div class="ingredient-item">
+                                    <span class="quantity-highlight">1.5 tbsp</span>
+                                    <span>Coriander Seeds</span>
+                                </div>
+                                <div class="ingredient-item">
+                                    <span class="quantity-highlight">1 tbsp</span>
+                                    <span>Black Peppercorns</span>
+                                </div>
+                                <div class="ingredient-item">
+                                    <span class="quantity-highlight">1 tsp</span>
+                                    <span>Whole Cloves</span>
+                                </div>
+                                <div class="ingredient-item">
+                                    <span class="quantity-highlight">10-12</span>
+                                    <span>Green Cardamom Pods</span>
+                                </div>
+                                <div class="ingredient-item">
+                                    <span class="quantity-highlight">2 tbsp</span>
+                                    <span>Ground Turmeric</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <h5 class="font-semibold mb-2">Instructions:</h5>
+                            <p>Toast whole spices (except turmeric) in a dry pan for 2-3 mins until fragrant. Cool, then grind to a fine powder. Mix with turmeric.</p>
+                        </div>
+                    </div>
+                    
+                    <div id="quick-recipe" class="hidden space-y-6">
+                        <p class="text-center text-gray-600 body-large">
+                            This simplified version uses pre-ground spices for maximum convenience and great flavor.
+                        </p>
+                        <div class="ingredient-list">
+                            <h4 class="heading-4 mb-4">Ingredients:</h4>
+                            <div class="space-y-3">
+                                <div class="ingredient-item">
+                                    <span class="quantity-highlight">2 tbsp</span>
+                                    <span>Cumin Powder</span>
+                                </div>
+                                <div class="ingredient-item">
+                                    <span class="quantity-highlight">1.5 tbsp</span>
+                                    <span>Coriander Powder</span>
+                                </div>
+                                <div class="ingredient-item">
+                                    <span class="quantity-highlight">1 tbsp</span>
+                                    <span>Black Pepper Powder</span>
+                                </div>
+                                <div class="ingredient-item">
+                                    <span class="quantity-highlight">1 tsp</span>
+                                    <span>Ground Cloves</span>
+                                </div>
+                                <div class="ingredient-item">
+                                    <span class="quantity-highlight">1.5 tsp</span>
+                                    <span>Cardamom Powder</span>
+                                </div>
+                                <div class="ingredient-item">
+                                    <span class="quantity-highlight">2 tbsp</span>
+                                    <span>Turmeric Powder</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h5 class="font-semibold mb-2">Instructions:</h5>
+                            <p>Combine all ground spices in a small bowl and whisk thoroughly until uniform.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Shopping & Preparation Section -->
+    <section id="ingredients" class="py-16 px-6 bg-gray-50">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12">
+                <h2 class="display-2 mb-6">Shopping & Preparation</h2>
+                <p class="body-large text-gray-600">Everything you need for the perfect Mandi</p>
+            </div>
+
+            <!-- Serving Calculator -->
+            <div class="card mb-12 slide-up">
+                <div class="card-body">
+                    <div class="flex items-center justify-center gap-6 p-6 bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl">
+                        <label for="servings" class="heading-4 text-gray-700">Number of Meals:</label>
+                        <div class="flex items-center gap-3">
+                            <button id="decrease-servings" class="btn btn-secondary btn-small">−</button>
+                            <input type="number" id="servings" value="4" min="1" max="10" 
+                                   class="form-input w-20 text-center font-bold text-lg">
+                            <button id="increase-servings" class="btn btn-secondary btn-small">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ingredients Grid -->
+            <div class="grid lg:grid-cols-3 gap-8" id="shopping-list">
+                <!-- Main Components -->
+                <div class="card slide-up">
+                    <div class="card-header">
+                        <h3 class="heading-3 text-center">🥩 Main Components</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="space-y-4">
+                            <label class="checkbox-custom">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">
+                                    <span data-base-qty="750" data-unit="g" class="quantity-highlight">750g</span>
+                                    Beef Shank, bone-in (Nalli)
+                                </span>
+                            </label>
+                            <label class="checkbox-custom">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">
+                                    <span data-base-qty="2" data-unit=" cups" class="quantity-highlight">2 cups</span>
+                                    Long-Grain Basmati Rice
+                                </span>
+                            </label>
+                            <label class="checkbox-custom">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">
+                                    <span data-base-qty="1" data-unit="" class="quantity-highlight">1</span>
+                                    large Red Onion
+                                </span>
+                            </label>
+                            <label class="checkbox-custom">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">
+                                    <span data-base-qty="4" data-unit="" class="quantity-highlight">4</span>
+                                    cloves Garlic
+                                </span>
+                            </label>
+                            <label class="checkbox-custom">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">
+                                    <span data-base-qty="1" data-unit=" tbsp" class="quantity-highlight">1 tbsp</span>
+                                    Ginger-Garlic Paste
+                                </span>
+                            </label>
+                            <label class="checkbox-custom">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">
+                                    <span data-base-qty="3" data-unit=" tbsp" class="quantity-highlight">3 tbsp</span>
+                                    Ghee or Vegetable Oil
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spices & Smoke -->
+                <div class="card slide-up">
+                    <div class="card-header">
+                        <h3 class="heading-3 text-center">🌶️ Spices & Smoke</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="space-y-4">
+                            <label class="checkbox-custom">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">
+                                    <span data-base-qty="3" data-unit=" tbsp" class="quantity-highlight">3 tbsp</span>
+                                    Homemade Hawaij Blend
+                                </span>
+                            </label>
+                            <label class="checkbox-custom">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">
+                                    <span data-base-qty="1" data-unit="" class="quantity-highlight">1</span>
+                                    (2-inch) Cinnamon Stick
+                                </span>
+                            </label>
+                            <label class="checkbox-custom">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">
+                                    <span data-base-qty="4" data-unit="" class="quantity-highlight">4</span>
+                                    Green Cardamom Pods
+                                </span>
+                            </label>
+                            <label class="checkbox-custom">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">
+                                    <span data-base-qty="4" data-unit="" class="quantity-highlight">4</span>
+                                    Cloves
+                                </span>
+                            </label>
+                            <label class="checkbox-custom">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">
+                                    <span data-base-qty="2" data-unit="" class="quantity-highlight">2</span>
+                                    Bay Leaves
+                                </span>
+                            </label>
+                            <label class="checkbox-custom">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">
+                                    <span data-base-qty="1" data-unit="" class="quantity-highlight">1</span>
+                                    Dried Lime (Loomi)
+                                </span>
+                            </label>
+                            <label class="checkbox-custom">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">
+                                    <span data-base-qty="1" data-unit="" class="quantity-highlight">1</span>
+                                    small piece Hardwood Charcoal
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accompaniments -->
+                <div class="card slide-up">
+                    <div class="card-header">
+                        <h3 class="heading-3 text-center">🥗 Accompaniments</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="space-y-4">
+                            <label class="checkbox-custom">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">
+                                    <span data-base-qty="2" data-unit="" class="quantity-highlight">2</span>
+                                    medium Ripe Tomatoes
+                                </span>
+                            </label>
+                            <label class="checkbox-custom">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">
+                                    <span data-base-qty="2" data-unit="" class="quantity-highlight">2</span>
+                                    Green Chilies
+                                </span>
+                            </label>
+                            <label class="checkbox-custom">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">
+                                    <span data-base-qty="0.5" data-unit=" bunch" class="quantity-highlight">0.5 bunch</span>
+                                    Fresh Coriander (Dhaniya)
+                                </span>
+                            </label>
+                            <label class="checkbox-custom">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">
+                                    <span data-base-qty="1" data-unit="" class="quantity-highlight">1</span>
+                                    Lemon
+                                </span>
+                            </label>
+                            <label class="checkbox-custom">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">
+                                    <span data-base-qty="1.5" data-unit=" cups" class="quantity-highlight">1.5 cups</span>
+                                    Plain Yogurt (Dahi)
+                                </span>
+                            </label>
+                            <label class="checkbox-custom">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">
+                                    <span data-base-qty="0.5" data-unit="" class="quantity-highlight">0.5</span>
+                                    medium Cucumber
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
         <!-- Cooking Masterclass Section -->
-        <section id="masterclass" class="mb-12">
-            <h2 class="text-4xl font-bold section-title">The Cooking Masterclass</h2>
-            <div class="space-y-8">
-                <!-- Step 1 -->
-                <div class="step pl-8 pb-8">
-                    <h3 class="step-title text-3xl font-bold mb-3 text-stone-800">Part I: The Pressure Cooker <span class="text-lg font-normal text-stone-500">(~60 min)</span></h3>
-                    <div class="prose max-w-none text-stone-700">
-                        <p>This is where the magic begins. We build layers of flavor and cook the beef until it's unbelievably tender, creating our precious broth in the process.</p>
-                        <ol class="list-decimal list-inside space-y-2 mt-4">
-                            <li><strong>Sauté Aromatics:</strong> Heat ghee in pressure cooker, add whole spices (cinnamon, cardamom, cloves, bay leaves) and sauté for 30 seconds. Add onion and garlic, cook until soft.</li>
-                            <li><strong>Sear Beef:</strong> Increase heat, add beef and sear on all sides until well-browned.</li>
-                            <li><strong>Quick Marinade:</strong> Reduce heat, stir in ginger-garlic paste and 2 tbsp of your Hawaij blend.</li>
-                            <li><strong>Pressure Cook:</strong> Add hot water to cover beef by 1 inch. Add dried lime. Secure lid, bring to pressure, and cook for 45-50 minutes.</li>
-                            <li><strong>Separate:</strong> Let pressure release naturally. Remove tender beef pieces. Strain the broth into a separate pot, discarding the whole spices.</li>
-                        </ol>
-                    </div>
+        <section id="masterclass" class="py-16 px-6">
+            <div class="container mx-auto max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="display-2 mb-6">The Cooking Masterclass</h2>
+                    <p class="body-large text-gray-600">Follow these steps to create the perfect Mandi</p>
                 </div>
-                <!-- Step 2 -->
-                <div class="step pl-8 pb-8">
-                    <h3 class="step-title text-3xl font-bold mb-3 text-stone-800">Part II: Cooking the Rice <span class="text-lg font-normal text-stone-500">(~25 min)</span></h3>
-                    <div class="prose max-w-none text-stone-700">
-                        <p>Use the "liquid gold" broth to cook the rice. Remember to start this while the beef is finishing its pressure cooking time.</p>
-                         <ol class="list-decimal list-inside space-y-2 mt-4">
-                            <li><strong>Prep Rice:</strong> Rinse Basmati rice until water runs clear. Soak for 30 mins, then drain completely.</li>
-                            <li><strong>Measure Broth:</strong> Use a 1.5:1 broth-to-rice ratio (e.g., 3 cups broth for 2 cups rice). Top up with hot water if needed.</li>
-                            <li><strong>Cook:</strong> Bring broth to a rolling boil in a pot. Add salt, then the drained rice. Cook on medium-high until broth is absorbed and steam holes appear.</li>
-                            <li><strong>Steam:</strong> Reduce heat to absolute minimum, cover tightly, and steam for 15-20 minutes. Rest for 5 mins off heat before fluffing.</li>
-                        </ol>
+
+                <div class="space-y-12">
+                    <!-- Step 1: Pressure Cooker -->
+                    <div class="card slide-up">
+                        <div class="card-header">
+                            <div class="flex items-center gap-4">
+                                <div class="step-dot active">1</div>
+                                <div>
+                                    <h3 class="heading-2 mb-2">The Pressure Cooker</h3>
+                                    <p class="text-gray-600">Build layers of flavor and cook tender beef (~60 min)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="body-large text-gray-700 mb-6">
+                                This is where the magic begins. We build layers of flavor and cook the beef until it's unbelievably tender, creating our precious broth in the process.
+                            </p>
+                            <div class="space-y-4">
+                                <div class="flex gap-4 p-4 bg-orange-50 rounded-lg">
+                                    <div class="w-8 h-8 bg-orange-200 rounded-full flex items-center justify-center text-orange-700 font-bold text-sm flex-shrink-0">1</div>
+                                    <div>
+                                        <h5 class="font-semibold mb-1">Sauté Aromatics:</h5>
+                                        <p class="text-gray-700">Heat ghee in pressure cooker, add whole spices (cinnamon, cardamom, cloves, bay leaves) and sauté for 30 seconds. Add onion and garlic, cook until soft.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4 p-4 bg-blue-50 rounded-lg">
+                                    <div class="w-8 h-8 bg-blue-200 rounded-full flex items-center justify-center text-blue-700 font-bold text-sm flex-shrink-0">2</div>
+                                    <div>
+                                        <h5 class="font-semibold mb-1">Sear Beef:</h5>
+                                        <p class="text-gray-700">Increase heat, add beef and sear on all sides until well-browned.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4 p-4 bg-green-50 rounded-lg">
+                                    <div class="w-8 h-8 bg-green-200 rounded-full flex items-center justify-center text-green-700 font-bold text-sm flex-shrink-0">3</div>
+                                    <div>
+                                        <h5 class="font-semibold mb-1">Quick Marinade:</h5>
+                                        <p class="text-gray-700">Reduce heat, stir in ginger-garlic paste and 2 tbsp of your Hawaij blend.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4 p-4 bg-purple-50 rounded-lg">
+                                    <div class="w-8 h-8 bg-purple-200 rounded-full flex items-center justify-center text-purple-700 font-bold text-sm flex-shrink-0">4</div>
+                                    <div>
+                                        <h5 class="font-semibold mb-1">Pressure Cook:</h5>
+                                        <p class="text-gray-700">Add hot water to cover beef by 1 inch. Add dried lime. Secure lid, bring to pressure, and cook for 45-50 minutes.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4 p-4 bg-yellow-50 rounded-lg">
+                                    <div class="w-8 h-8 bg-yellow-200 rounded-full flex items-center justify-center text-yellow-700 font-bold text-sm flex-shrink-0">5</div>
+                                    <div>
+                                        <h5 class="font-semibold mb-1">Separate:</h5>
+                                        <p class="text-gray-700">Let pressure release naturally. Remove tender beef pieces. Strain the broth into a separate pot, discarding the whole spices.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <!-- Step 3 -->
-                <div class="step pl-8 pb-8">
-                    <h3 class="step-title text-3xl font-bold mb-3 text-stone-800">Part III: The Final Crisp <span class="text-lg font-normal text-stone-500">(~20 min)</span></h3>
-                    <div class="prose max-w-none text-stone-700">
-                        <p>This parallel step gives the beef a beautiful, slightly crispy exterior for a fantastic textural contrast.</p>
-                        <ol class="list-decimal list-inside space-y-2 mt-4">
-                            <li><strong>Preheat Oven:</strong> Set your oven or OTG to 200°C (400°F).</li>
-                            <li><strong>Prep Beef:</strong> Arrange cooked beef on a baking tray. Brush with melted butter or oil mixed with a pinch of Hawaij spice.</li>
-                            <li><strong>Roast:</strong> Roast for 15-20 minutes until the outside is browned and slightly crispy.</li>
-                        </ol>
+
+                    <!-- Step 2: Rice -->
+                    <div class="card slide-up">
+                        <div class="card-header">
+                            <div class="flex items-center gap-4">
+                                <div class="step-dot">2</div>
+                                <div>
+                                    <h3 class="heading-2 mb-2">Cooking the Rice</h3>
+                                    <p class="text-gray-600">Use the "liquid gold" broth (~25 min)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="body-large text-gray-700 mb-6">
+                                Use the "liquid gold" broth to cook the rice. Remember to start this while the beef is finishing its pressure cooking time.
+                            </p>
+                            <div class="space-y-4">
+                                <div class="flex gap-4 p-4 bg-indigo-50 rounded-lg">
+                                    <div class="w-8 h-8 bg-indigo-200 rounded-full flex items-center justify-center text-indigo-700 font-bold text-sm flex-shrink-0">1</div>
+                                    <div>
+                                        <h5 class="font-semibold mb-1">Prep Rice:</h5>
+                                        <p class="text-gray-700">Rinse Basmati rice until water runs clear. Soak for 30 mins, then drain completely.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4 p-4 bg-teal-50 rounded-lg">
+                                    <div class="w-8 h-8 bg-teal-200 rounded-full flex items-center justify-center text-teal-700 font-bold text-sm flex-shrink-0">2</div>
+                                    <div>
+                                        <h5 class="font-semibold mb-1">Measure Broth:</h5>
+                                        <p class="text-gray-700">Use a 1.5:1 broth-to-rice ratio (e.g., 3 cups broth for 2 cups rice). Top up with hot water if needed.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4 p-4 bg-pink-50 rounded-lg">
+                                    <div class="w-8 h-8 bg-pink-200 rounded-full flex items-center justify-center text-pink-700 font-bold text-sm flex-shrink-0">3</div>
+                                    <div>
+                                        <h5 class="font-semibold mb-1">Cook & Steam:</h5>
+                                        <p class="text-gray-700">Bring broth to a rolling boil. Add salt, then rice. Cook until absorbed, then steam on low for 15-20 minutes.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <!-- Step 4 -->
-                <div class="step pl-8 pb-8 border-transparent">
-                    <h3 class="step-title text-3xl font-bold mb-3 text-stone-800">Part IV: The Smoky Finish <span class="text-lg font-normal text-stone-500">(~5 min)</span></h3>
-                    <div class="prose max-w-none text-stone-700">
-                        <p>The final, dramatic step that imparts the authentic Mandi aroma. Do not skip this!</p>
-                        <ol class="list-decimal list-inside space-y-2 mt-4">
-                            <li><strong>Assemble:</strong> Place the roasted beef pieces on top of the fluffed rice in the pot.</li>
-                            <li><strong>Create Well:</strong> Make a small well in the rice and place a small heatproof bowl (or foil cup) inside.</li>
-                            <li><strong>Smoke:</strong> Heat charcoal over a flame until glowing red. Place it in the bowl. Drizzle ~1 tsp of oil over the charcoal.</li>
-                            <li><strong>Infuse:</strong> Immediately cover the pot tightly to trap the smoke. Let it sit off the heat for 5-10 minutes.</li>
-                        </ol>
+
+                    <!-- Step 3: Final Steps -->
+                    <div class="card slide-up">
+                        <div class="card-header">
+                            <div class="flex items-center gap-4">
+                                <div class="step-dot">3</div>
+                                <div>
+                                    <h3 class="heading-2 mb-2">The Final Crisp & Smoke</h3>
+                                    <p class="text-gray-600">Crispy beef and authentic smoking (~25 min)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div>
+                                    <h4 class="heading-4 mb-4 text-orange-600">The Final Crisp (20 min)</h4>
+                                    <div class="space-y-3">
+                                        <div class="p-3 bg-orange-50 rounded-lg">
+                                            <p><strong>Preheat:</strong> Set oven to 200°C (400°F)</p>
+                                        </div>
+                                        <div class="p-3 bg-orange-50 rounded-lg">
+                                            <p><strong>Prep:</strong> Brush beef with butter/oil + Hawaij spice</p>
+                                        </div>
+                                        <div class="p-3 bg-orange-50 rounded-lg">
+                                            <p><strong>Roast:</strong> 15-20 mins until browned and crispy</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="heading-4 mb-4 text-red-600">The Smoky Finish (5 min)</h4>
+                                    <div class="space-y-3">
+                                        <div class="p-3 bg-red-50 rounded-lg">
+                                            <p><strong>Assemble:</strong> Place beef on rice in pot</p>
+                                        </div>
+                                        <div class="p-3 bg-red-50 rounded-lg">
+                                            <p><strong>Smoke:</strong> Hot charcoal + oil in foil cup</p>
+                                        </div>
+                                        <div class="p-3 bg-red-50 rounded-lg">
+                                            <p><strong>Infuse:</strong> Cover tightly for 5-10 minutes</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Accompaniments Section -->
-        <section id="sides" class="mb-12">
-            <h2 class="text-4xl font-bold section-title">Perfect Partners</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white p-6 rounded-2xl shadow-lg">
-                    <h3 class="text-3xl font-bold mb-3 text-red-700">Sahawiq (Fiery Salsa)</h3>
-                    <p class="mb-4">A fresh, spicy, acidic counterpoint that cuts through the richness of the Mandi. A must-have.</p>
-                    <p><strong>Blend:</strong> 2 tomatoes, 1-3 green chilies, 2 garlic cloves, handful of fresh coriander, juice of ½ lemon, pinch of cumin & salt. Pulse until coarsely chopped. Do not over-blend!</p>
+        <section class="py-16 px-6 bg-gray-50">
+            <div class="container mx-auto max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="display-2 mb-6">Perfect Partners</h2>
+                    <p class="body-large text-gray-600">Complete your Mandi experience with these traditional sides</p>
                 </div>
-                <div class="bg-white p-6 rounded-2xl shadow-lg">
-                    <h3 class="text-3xl font-bold mb-3 text-blue-700">Cucumber Raita</h3>
-                    <p class="mb-4">A cooling, creamy element that soothes the palate and complements the warm spices.</p>
-                    <p><strong>Whisk:</strong> 1.5 cups plain yogurt, ½ grated & squeezed cucumber, 1 minced garlic clove, chopped fresh mint, squeeze of lemon juice, and salt. Chill for 20 mins.</p>
+
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div class="card slide-up">
+                        <div class="card-header text-center">
+                            <div class="text-5xl mb-4">🌶️</div>
+                            <h3 class="heading-2 mb-2 text-red-600">Sahawiq (Fiery Salsa)</h3>
+                            <p class="text-gray-600">A fresh, spicy, acidic counterpoint that cuts through the richness</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="bg-red-50 p-6 rounded-xl">
+                                <h4 class="heading-4 mb-4">Quick Blend Method:</h4>
+                                <p class="mb-4">
+                                    Combine 2 tomatoes, 1-3 green chilies, 2 garlic cloves, handful of fresh coriander, 
+                                    juice of ½ lemon, pinch of cumin & salt.
+                                </p>
+                                <p class="text-sm text-red-700 font-medium">
+                                    💡 Pulse until coarsely chopped. Do not over-blend!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card slide-up">
+                        <div class="card-header text-center">
+                            <div class="text-5xl mb-4">🥒</div>
+                            <h3 class="heading-2 mb-2 text-blue-600">Cucumber Raita</h3>
+                            <p class="text-gray-600">A cooling, creamy element that soothes the palate</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="bg-blue-50 p-6 rounded-xl">
+                                <h4 class="heading-4 mb-4">Whisk Together:</h4>
+                                <p class="mb-4">
+                                    1.5 cups plain yogurt, ½ grated & squeezed cucumber, 1 minced garlic clove, 
+                                    chopped fresh mint, squeeze of lemon juice, and salt.
+                                </p>
+                                <p class="text-sm text-blue-700 font-medium">
+                                    💡 Chill for 20 mins before serving
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Meal Prep Section -->
-        <section id="mealprep">
-            <h2 class="text-4xl font-bold section-title">The Meal Prep Manifesto</h2>
-            <div class="bg-white p-8 rounded-2xl shadow-lg">
-                <h3 class="text-3xl font-bold mb-4 text-center">Cook Once, Feast All Week</h3>
-                <p class="text-center text-stone-600 mb-6">The key is to store components separately in "Mandi Kits." This preserves the texture and flavor of each element, ensuring every meal is as good as the first.</p>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg">
-                        <h4 class="font-bold text-xl text-green-800">Storage Strategy</h4>
-                        <ul class="list-disc list-inside mt-2 space-y-1">
-                            <li><strong>Rice:</strong> Cool completely, then store in a large airtight container.</li>
-                            <li><strong>Beef:</strong> Store roasted pieces in a separate airtight container.</li>
-                            <li><strong>Sauces:</strong> Keep Sahawiq and Raita in their own small, airtight jars.</li>
-                        </ul>
-                    </div>
-                    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
-                        <h4 class="font-bold text-xl text-blue-800">Reheating Guide</h4>
-                        <p class="mt-2">To revive rice, place a portion on a plate, sprinkle with 1 tbsp of water, cover, and microwave for 90 seconds. Reheat beef separately until hot. Assemble and serve with cold sauces.</p>
+        <section class="py-16 px-6">
+            <div class="container mx-auto max-w-4xl">
+                <div class="text-center mb-12">
+                    <h2 class="display-2 mb-6">The Meal Prep Manifesto</h2>
+                    <p class="body-large text-gray-600">Cook once, feast all week</p>
+                </div>
+
+                <div class="card slide-up">
+                    <div class="card-body">
+                        <h3 class="heading-2 text-center mb-8">Store Components Separately for Best Results</h3>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-xl">
+                                <h4 class="heading-4 text-green-800 mb-4">🥶 Storage Strategy</h4>
+                                <div class="space-y-3">
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                                        <p><strong>Rice:</strong> Cool completely, store in airtight container</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                                        <p><strong>Beef:</strong> Store roasted pieces separately</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                                        <p><strong>Sauces:</strong> Keep in small, airtight jars</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-xl">
+                                <h4 class="heading-4 text-blue-800 mb-4">🔥 Reheating Guide</h4>
+                                <p class="mb-4">
+                                    To revive rice: sprinkle with 1 tbsp water, cover, microwave 90 seconds. 
+                                    Reheat beef separately until hot.
+                                </p>
+                                <p class="text-sm text-blue-700 font-medium">
+                                    💡 Assemble and serve with cold sauces
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <footer class="text-center mt-12">
-            <p class="text-stone-500">You've mastered Mandi. Welcome to the club.</p>
+        <!-- Footer -->
+        <footer class="py-12 px-6 bg-gray-900 text-white">
+            <div class="container mx-auto max-w-4xl text-center">
+                <div class="mb-8">
+                    <h3 class="heading-2 mb-4">You've Mastered Mandi!</h3>
+                    <p class="body-large text-gray-300 mb-6">
+                        Welcome to the club of authentic Mandi makers. Share your creation and inspire others.
+                    </p>
+                    <div class="flex justify-center gap-4">
+                        <a href="../index.html" class="btn btn-secondary">← Back to Recipes</a>
+                        <a href="egg-bhurji.html" class="btn btn-primary">Try Egg Bhurji Next →</a>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-700 pt-8">
+                    <p class="text-gray-400 mb-4">Built with ❤️ for food lovers everywhere</p>
+                    <p class="text-gray-500 body-small">
+                        Interactive recipes • No downloads required • Works on all devices
+                    </p>
+                </div>
+            </div>
         </footer>
-    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Spice blend switcher functionality
             const goldBtn = document.getElementById('gold-btn');
             const quickBtn = document.getElementById('quick-btn');
             const goldRecipe = document.getElementById('gold-recipe');
             const quickRecipe = document.getElementById('quick-recipe');
 
             function switchBlend(activeBtn, inactiveBtn, activeRecipe, inactiveRecipe) {
-                activeBtn.classList.add('blend-btn-active');
-                activeBtn.classList.remove('blend-btn-inactive');
-                inactiveBtn.classList.add('blend-btn-inactive');
-                inactiveBtn.classList.remove('blend-btn-active');
+                // Update button states
+                activeBtn.classList.remove('btn-secondary');
+                activeBtn.classList.add('btn-primary');
+                inactiveBtn.classList.remove('btn-primary');
+                inactiveBtn.classList.add('btn-secondary');
+                
+                // Toggle recipe visibility
                 activeRecipe.classList.remove('hidden');
                 inactiveRecipe.classList.add('hidden');
             }
@@ -299,8 +759,11 @@
             goldBtn.addEventListener('click', () => switchBlend(goldBtn, quickBtn, goldRecipe, quickRecipe));
             quickBtn.addEventListener('click', () => switchBlend(quickBtn, goldBtn, quickRecipe, goldRecipe));
 
+            // Serving calculator functionality
             const servingsInput = document.getElementById('servings');
-            const ingredients = document.getElementById('shopping-list').querySelectorAll('li span[data-base-qty]');
+            const decreaseBtn = document.getElementById('decrease-servings');
+            const increaseBtn = document.getElementById('increase-servings');
+            const ingredients = document.querySelectorAll('[data-base-qty]');
 
             function updateQuantities() {
                 const baseServings = 4;
@@ -321,8 +784,62 @@
                 });
             }
 
+            // Serving adjuster buttons
+            decreaseBtn.addEventListener('click', () => {
+                const current = parseInt(servingsInput.value) || 1;
+                if (current > 1) {
+                    servingsInput.value = current - 1;
+                    updateQuantities();
+                }
+            });
+
+            increaseBtn.addEventListener('click', () => {
+                const current = parseInt(servingsInput.value) || 1;
+                if (current < 10) {
+                    servingsInput.value = current + 1;
+                    updateQuantities();
+                }
+            });
+
             servingsInput.addEventListener('input', updateQuantities);
             updateQuantities(); // Initial call
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Intersection observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements with animation classes
+            document.querySelectorAll('.slide-up, .fade-in').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                observer.observe(el);
+            });
         });
     </script>
 </body>
