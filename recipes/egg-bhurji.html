@@ -85,15 +85,6 @@
             <span>Egg Bhurji</span>
         </nav>
     </div>
-            border-color: #F59E0B;
-        }
-        .ingredient-checkbox:checked + label span:last-child {
-            text-decoration: line-through;
-            color: #9CA3AF;
-        }
-    </style>
-</head>
-<body class="antialiased">
 
     <main class="container mx-auto px-4 py-8 md:py-12">
 
@@ -275,193 +266,170 @@
         <section id="instructions" class="py-16 px-6">
             <div class="container mx-auto max-w-4xl">
                 <div class="text-center mb-12">
-                    <h2 class="display-2 mb-6">Guided Instructions</h2>
-                    <p class="body-large text-gray-600">Follow along with our interactive step-by-step guide</p>
+                    <h2 class="display-2 mb-6">Complete Cooking Instructions</h2>
+                    <p class="body-large text-gray-600">Follow these step-by-step instructions to create the perfect Egg Bhurji</p>
                 </div>
 
-                <!-- Progress Bar -->
-                <div class="progress-bar mb-8">
-                    <div class="progress-fill" id="progress-fill" style="width: 11.11%"></div>
-                </div>
-
-                <!-- Step Navigation -->
-                <div class="flex justify-between items-center mb-12">
-                    <button id="prev-step" class="btn btn-secondary" disabled>
-                        ← Previous Step
-                    </button>
-                    <div class="text-center">
-                        <span class="caption text-gray-500">Step</span>
-                        <div class="heading-4">
-                            <span id="current-step">1</span> of <span id="total-steps">9</span>
-                        </div>
-                    </div>
-                    <button id="next-step" class="btn btn-primary">
-                        Next Step →
-                    </button>
-                </div>
-
-                <!-- Instruction Cards -->
-                <div id="instruction-container">
+                <!-- All Steps Visible - Compact Layout -->
+                <div class="space-y-4">
                     <!-- Step 1 -->
-                    <div class="card instruction-card active" data-step="1">
-                        <div class="card-header">
-                            <div class="flex items-center gap-4">
-                                <div class="step-dot active">1</div>
-                                <h3 class="heading-3">Prepare the Eggs</h3>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="body-large mb-4">
-                                Lightly whisk the eggs in a bowl with a pinch of salt. Don't over-beat; 
-                                you want streaks of yolk and white visible for the best texture.
-                            </p>
-                            <div class="bg-yellow-50 p-4 rounded-lg">
-                                <p class="text-sm font-medium text-yellow-800">
-                                    💡 Pro Tip: Room temperature eggs scramble more evenly than cold ones.
-                                </p>
+                    <div class="card slide-up">
+                        <div class="card-body p-4">
+                            <div class="flex gap-4">
+                                <div class="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">1</div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-lg mb-2">Prepare the Eggs</h4>
+                                    <p class="text-gray-700 text-sm mb-2">
+                                        Lightly whisk the eggs in a bowl with a pinch of salt. Don't over-beat; you want streaks of yolk and white visible.
+                                    </p>
+                                    <div class="bg-yellow-50 p-2 rounded text-xs text-yellow-800">
+                                        💡 Room temperature eggs scramble more evenly than cold ones.
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Step 2 -->
-                    <div class="card instruction-card hidden" data-step="2">
-                        <div class="card-header">
-                            <div class="flex items-center gap-4">
-                                <div class="step-dot">2</div>
-                                <h3 class="heading-3">Sauté the Onions</h3>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="body-large mb-4">
-                                Heat oil or ghee in a pan over medium heat. Add the chopped onions and sauté 
-                                until they turn soft and translucent, about 3-4 minutes.
-                            </p>
-                            <div class="bg-orange-50 p-4 rounded-lg">
-                                <p class="text-sm font-medium text-orange-800">
-                                    💡 Pro Tip: Properly cooked onions are the foundation of great bhurji flavor.
-                                </p>
+                    <div class="card slide-up">
+                        <div class="card-body p-4">
+                            <div class="flex gap-4">
+                                <div class="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">2</div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-lg mb-2">Sauté the Onions</h4>
+                                    <p class="text-gray-700 text-sm mb-2">
+                                        Heat oil or ghee in a pan over medium heat. Add chopped onions and sauté until soft and translucent (3-4 minutes).
+                                    </p>
+                                    <div class="bg-orange-50 p-2 rounded text-xs text-orange-800">
+                                        💡 Properly cooked onions are the foundation of great bhurji flavor.
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Step 3 -->
-                    <div class="card instruction-card hidden" data-step="3">
-                        <div class="card-header">
-                            <div class="flex items-center gap-4">
-                                <div class="step-dot">3</div>
-                                <h3 class="heading-3">Add Aromatics</h3>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="body-large mb-4">
-                                Add the ginger-garlic paste and green chilies. Sauté for another minute until 
-                                the raw smell disappears and it becomes fragrant.
-                            </p>
-                            <div class="bg-green-50 p-4 rounded-lg">
-                                <p class="text-sm font-medium text-green-800">
-                                    💡 Pro Tip: This step builds the aromatic base - don't rush it!
-                                </p>
+                    <div class="card slide-up">
+                        <div class="card-body p-4">
+                            <div class="flex gap-4">
+                                <div class="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">3</div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-lg mb-2">Add Aromatics</h4>
+                                    <p class="text-gray-700 text-sm mb-2">
+                                        Add ginger-garlic paste and green chilies. Sauté for 1 minute until fragrant and raw smell disappears.
+                                    </p>
+                                    <div class="bg-green-50 p-2 rounded text-xs text-green-800">
+                                        💡 This step builds the aromatic base - don't rush it!
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Continue with remaining steps... -->
-                    <div class="card instruction-card hidden" data-step="4">
-                        <div class="card-header">
-                            <div class="flex items-center gap-4">
-                                <div class="step-dot">4</div>
-                                <h3 class="heading-3">Cook the Tomatoes</h3>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="body-large mb-4">
-                                Add the chopped tomatoes and cook until they become soft and mushy, and oil starts 
-                                to separate from the mixture. This is crucial for the flavor base.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="card instruction-card hidden" data-step="5">
-                        <div class="card-header">
-                            <div class="flex items-center gap-4">
-                                <div class="step-dot">5</div>
-                                <h3 class="heading-3">Add the Spices</h3>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="body-large mb-4">
-                                Add the dry spices: turmeric powder, red chili powder, and pav bhaji masala. 
-                                Stir well and cook for 30 seconds to bloom the spices.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="card instruction-card hidden" data-step="6">
-                        <div class="card-header">
-                            <div class="flex items-center gap-4">
-                                <div class="step-dot">6</div>
-                                <h3 class="heading-3">Add the Eggs</h3>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="body-large mb-4">
-                                Lower the heat and pour in the whisked eggs. Let them sit for about 10-15 seconds 
-                                before you start scrambling.
-                            </p>
-                            <div class="bg-red-50 p-4 rounded-lg">
-                                <p class="text-sm font-medium text-red-800">
-                                    💡 Critical: Lower heat prevents the eggs from cooking too quickly!
-                                </p>
+                    <!-- Step 4 -->
+                    <div class="card slide-up">
+                        <div class="card-body p-4">
+                            <div class="flex gap-4">
+                                <div class="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">4</div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-lg mb-2">Cook the Tomatoes</h4>
+                                    <p class="text-gray-700 text-sm mb-2">
+                                        Add chopped tomatoes and cook until soft and mushy, with oil separating from the mixture.
+                                    </p>
+                                    <div class="bg-red-50 p-2 rounded text-xs text-red-800">
+                                        💡 Tomatoes should break down completely to form a rich base.
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="card instruction-card hidden" data-step="7">
-                        <div class="card-header">
-                            <div class="flex items-center gap-4">
-                                <div class="step-dot">7</div>
-                                <h3 class="heading-3">Scramble Gently</h3>
+                    <!-- Step 5 -->
+                    <div class="card slide-up">
+                        <div class="card-body p-4">
+                            <div class="flex gap-4">
+                                <div class="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">5</div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-lg mb-2">Add the Spices</h4>
+                                    <p class="text-gray-700 text-sm mb-2">
+                                        Add turmeric, red chili powder, and pav bhaji masala. Stir well and cook for 30 seconds to bloom the spices.
+                                    </p>
+                                    <div class="bg-purple-50 p-2 rounded text-xs text-purple-800">
+                                        💡 Blooming spices releases their full aroma and flavor.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="body-large mb-4">
-                                Gently scramble the eggs with a spatula. Cook until the eggs are just set but 
-                                still moist and soft. Avoid overcooking to prevent dry, rubbery bhurji.
-                            </p>
                         </div>
                     </div>
 
-                    <div class="card instruction-card hidden" data-step="8">
-                        <div class="card-header">
-                            <div class="flex items-center gap-4">
-                                <div class="step-dot">8</div>
-                                <h3 class="heading-3">Final Touches</h3>
+                    <!-- Step 6 -->
+                    <div class="card slide-up">
+                        <div class="card-body p-4">
+                            <div class="flex gap-4">
+                                <div class="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">6</div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-lg mb-2">Add the Eggs</h4>
+                                    <p class="text-gray-700 text-sm mb-2">
+                                        Lower the heat and pour in the whisked eggs. Let them sit for 10-15 seconds before scrambling.
+                                    </p>
+                                    <div class="bg-red-50 p-2 rounded text-xs text-red-800">
+                                        ⚠️ Lower heat prevents eggs from cooking too quickly!
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="body-large mb-4">
-                                Turn off the heat. Stir in the chopped fresh coriander. Check for salt and 
-                                adjust if necessary.
-                            </p>
                         </div>
                     </div>
 
-                    <div class="card instruction-card hidden" data-step="9">
-                        <div class="card-header">
-                            <div class="flex items-center gap-4">
-                                <div class="step-dot completed">9</div>
-                                <h3 class="heading-3">Serve & Enjoy!</h3>
+                    <!-- Step 7 -->
+                    <div class="card slide-up">
+                        <div class="card-body p-4">
+                            <div class="flex gap-4">
+                                <div class="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">7</div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-lg mb-2">Scramble Gently</h4>
+                                    <p class="text-gray-700 text-sm mb-2">
+                                        Gently scramble with a spatula until eggs are just set but still moist. Avoid overcooking.
+                                    </p>
+                                    <div class="bg-blue-50 p-2 rounded text-xs text-blue-800">
+                                        💡 Eggs should be creamy and slightly glossy when done.
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="card-body">
-                            <p class="body-large mb-4">
-                                Serve immediately with hot buttered pav, roti, or toast. Enjoy your delicious 
-                                homemade egg bhurji!
-                            </p>
-                            <div class="bg-green-50 p-4 rounded-lg">
-                                <p class="text-sm font-medium text-green-800">
-                                    🎉 Congratulations! You've mastered the perfect Egg Bhurji!
-                                </p>
+                    </div>
+
+                    <!-- Step 8 -->
+                    <div class="card slide-up">
+                        <div class="card-body p-4">
+                            <div class="flex gap-4">
+                                <div class="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">8</div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-lg mb-2">Final Touches</h4>
+                                    <p class="text-gray-700 text-sm mb-2">
+                                        Turn off heat. Stir in fresh coriander and adjust salt to taste.
+                                    </p>
+                                    <div class="bg-green-50 p-2 rounded text-xs text-green-800">
+                                        💡 Fresh herbs should be added at the end to preserve flavor.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 9 -->
+                    <div class="card slide-up">
+                        <div class="card-body p-4">
+                            <div class="flex gap-4">
+                                <div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">✓</div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-lg mb-2">Serve & Enjoy!</h4>
+                                    <p class="text-gray-700 text-sm mb-2">
+                                        Serve immediately with hot buttered pav, roti, or toast. Enjoy your delicious homemade egg bhurji!
+                                    </p>
+                                    <div class="bg-green-50 p-2 rounded text-xs text-green-800 border-l-2 border-green-400">
+                                        🎉 Congratulations! You've mastered the perfect Egg Bhurji!
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -596,75 +564,6 @@
             servingsInput.addEventListener('input', updateQuantities);
             updateQuantities(); // Initial call
 
-            // Step navigation functionality
-            let currentStep = 1;
-            const totalSteps = 9;
-            const prevBtn = document.getElementById('prev-step');
-            const nextBtn = document.getElementById('next-step');
-            const currentStepDisplay = document.getElementById('current-step');
-            const progressFill = document.getElementById('progress-fill');
-            const instructionCards = document.querySelectorAll('.instruction-card');
-
-            function updateStep() {
-                // Update progress bar
-                const progress = (currentStep / totalSteps) * 100;
-                progressFill.style.width = `${progress}%`;
-
-                // Update step display
-                currentStepDisplay.textContent = currentStep;
-
-                // Update button states
-                prevBtn.disabled = currentStep === 1;
-                nextBtn.disabled = currentStep === totalSteps;
-
-                if (currentStep === totalSteps) {
-                    nextBtn.textContent = 'Complete! 🎉';
-                } else {
-                    nextBtn.textContent = 'Next Step →';
-                }
-
-                // Show/hide instruction cards
-                instructionCards.forEach((card, index) => {
-                    const stepNumber = index + 1;
-                    if (stepNumber === currentStep) {
-                        card.classList.remove('hidden');
-                        card.classList.add('active');
-                    } else {
-                        card.classList.add('hidden');
-                        card.classList.remove('active');
-                    }
-                });
-
-                // Update step dots
-                document.querySelectorAll('.step-dot').forEach((dot, index) => {
-                    const stepNumber = index + 1;
-                    dot.classList.remove('active', 'completed');
-                    
-                    if (stepNumber === currentStep) {
-                        dot.classList.add('active');
-                    } else if (stepNumber < currentStep) {
-                        dot.classList.add('completed');
-                    }
-                });
-            }
-
-            prevBtn.addEventListener('click', () => {
-                if (currentStep > 1) {
-                    currentStep--;
-                    updateStep();
-                }
-            });
-
-            nextBtn.addEventListener('click', () => {
-                if (currentStep < totalSteps) {
-                    currentStep++;
-                    updateStep();
-                } else {
-                    // Recipe completed - could redirect or show completion message
-                    alert('🎉 Congratulations! You\'ve completed the Egg Bhurji recipe!');
-                }
-            });
-
             // Initialize flavor profile chart
             const ctx = document.getElementById('flavorChart').getContext('2d');
             new Chart(ctx, {
@@ -752,9 +651,6 @@
                 el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
                 observer.observe(el);
             });
-
-            // Initialize with first step
-            updateStep();
         });
     </script>
 </body>
