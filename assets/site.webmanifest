@@ -1,0 +1,27 @@
+{
+    "name": "Culinary Craft - Interactive Recipe Collection",
+    "short_name": "Culinary Craft",
+    "description": "Interactive cooking guides with smart calculators and step-by-step instructions",
+    "icons": [
+        {
+            "src": "favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#E57373",
+    "background_color": "#FDFBF8",
+    "display": "standalone",
+    "start_url": "/",
+    "scope": "/"
+}

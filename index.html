@@ -3,12 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Recipe Collection | Culinary Craft</title>
+    <title>Interactive Recipe Collection | Culinary Craft - Free Cooking Guides</title>
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="A collection of interactive, beautifully designed recipe guides featuring Beef Mandi and Egg Bhurji. Cook with confidence using our dynamic ingredient calculators and step-by-step instructions.">
-    <meta name="keywords" content="interactive recipes, beef mandi, egg bhurji, cooking guide, indian recipes, recipe calculator">
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+    
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="description" content="Discover free interactive recipe guides for Beef Mandi, Beef Kofta, Egg Bhurji & more. Features smart calculators, step-by-step instructions, and mobile-friendly design. Cook with confidence today!">
+    <meta name="keywords" content="interactive recipes, free recipe calculator, beef mandi recipe, beef kofta recipe, egg bhurji recipe, indian cooking, step by step cooking guide, mobile recipes, cooking for beginners, recipe conversion calculator">
     <meta name="author" content="Culinary Craft">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yoursite.com/">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Interactive Recipe Collection | Culinary Craft">
+    <meta property="og:description" content="Free interactive cooking guides with smart calculators and step-by-step instructions. Perfect recipes for beginners and experts alike!">
+    <meta property="og:image" content="https://yoursite.com/assets/og-image.jpg">
+    <meta property="og:url" content="https://yoursite.com/">
+    <meta property="og:site_name" content="Culinary Craft">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Interactive Recipe Collection | Culinary Craft">
+    <meta name="twitter:description" content="Free interactive cooking guides with smart calculators and step-by-step instructions.">
+    <meta name="twitter:image" content="https://yoursite.com/assets/twitter-image.jpg">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Culinary Craft",
+      "description": "Interactive recipe collection with smart calculators and step-by-step cooking guides",
+      "url": "https://yoursite.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://yoursite.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "Recipe",
+            "position": 1,
+            "name": "The Bachelor's Beef Mandi",
+            "description": "Interactive beef mandi recipe with spice blend calculator and smoking guide",
+            "url": "https://yoursite.com/recipes/beef-mandi.html",
+            "totalTime": "PT2H30M",
+            "recipeYield": "4-6 servings",
+            "recipeCuisine": "Middle Eastern",
+            "recipeCategory": "Main Course"
+          },
+          {
+            "@type": "Recipe",
+            "position": 2,
+            "name": "Bachelor's Bulk-Batch Beef Kofta",
+            "description": "Perfect meal-prep beef kofta curry with pressure cooker tips and storage guide",
+            "url": "https://yoursite.com/recipes/beef-kofta.html",
+            "totalTime": "PT50M",
+            "recipeYield": "6 servings",
+            "recipeCuisine": "Indian",
+            "recipeCategory": "Main Course"
+          },
+          {
+            "@type": "Recipe",
+            "position": 3,
+            "name": "The Ultimate Egg Bhurji",
+            "description": "Perfect Indian scrambled eggs with serving calculator and flavor variations",
+            "url": "https://yoursite.com/recipes/egg-bhurji.html",
+            "totalTime": "PT15M",
+            "recipeYield": "2-4 servings",
+            "recipeCuisine": "Indian",
+            "recipeCategory": "Breakfast"
+          }
+        ]
+      }
+    }
+    </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -81,7 +158,7 @@
                 </p>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                 <!-- Beef Mandi Card -->
                 <article class="card slide-up">
                     <div class="card-header text-center">
@@ -95,7 +172,7 @@
                             <div class="stat-item">
                                 <div class="stat-icon">⏱️</div>
                                 <div class="stat-value">2.5 hrs</div>
-                                <div class="stat-label">Total Time</div>
+                                <div class="stat-label">Total</div>
                             </div>
                             <div class="stat-item">
                                 <div class="stat-icon">👥</div>
@@ -105,29 +182,22 @@
                             <div class="stat-item">
                                 <div class="stat-icon">📊</div>
                                 <div class="stat-value">Medium</div>
-                                <div class="stat-label">Difficulty</div>
+                                <div class="stat-label">Level</div>
                             </div>
                         </div>
 
-                        <div class="space-y-4 mb-8">
-                            <h4 class="heading-4">Interactive Features:</h4>
-                            <div class="grid grid-cols-1 gap-3">
-                                <div class="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
-                                    <span class="text-green-600 text-xl">✓</span>
-                                    <span class="body-small">Spice blend switcher (Gold Standard vs Quick-Fix)</span>
-                                </div>
-                                <div class="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
-                                    <span class="text-blue-600 text-xl">✓</span>
-                                    <span class="body-small">Dynamic serving calculator with shopping list</span>
-                                </div>
-                                <div class="flex items-center gap-3 p-3 bg-purple-50 rounded-lg">
-                                    <span class="text-purple-600 text-xl">✓</span>
-                                    <span class="body-small">Step-by-step masterclass format</span>
-                                </div>
-                                <div class="flex items-center gap-3 p-3 bg-orange-50 rounded-lg">
-                                    <span class="text-orange-600 text-xl">✓</span>
-                                    <span class="body-small">Traditional smoking (*tadween*) guide</span>
-                                </div>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center gap-2 p-2 bg-green-50 rounded text-sm">
+                                <span class="text-green-600">✓</span>
+                                <span>Spice blend calculator</span>
+                            </div>
+                            <div class="flex items-center gap-2 p-2 bg-blue-50 rounded text-sm">
+                                <span class="text-blue-600">✓</span>
+                                <span>Traditional smoking guide</span>
+                            </div>
+                            <div class="flex items-center gap-2 p-2 bg-purple-50 rounded text-sm">
+                                <span class="text-purple-600">✓</span>
+                                <span>Step-by-step masterclass</span>
                             </div>
                         </div>
                     </div>
@@ -139,11 +209,61 @@
                     </div>
                 </article>
 
+                <!-- Beef Kofta Card -->
+                <article class="card slide-up">
+                    <div class="card-header text-center">
+                        <div class="text-6xl mb-4">🥩</div>
+                        <h3 class="heading-1 mb-2">Beef Kofta Curry</h3>
+                        <p class="text-gray-600">Perfect meal-prep with pressure cooker efficiency</p>
+                    </div>
+                    
+                    <div class="card-body">
+                        <div class="recipe-stats mb-6">
+                            <div class="stat-item">
+                                <div class="stat-icon">⏱️</div>
+                                <div class="stat-value">50 min</div>
+                                <div class="stat-label">Total</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">👥</div>
+                                <div class="stat-value">6</div>
+                                <div class="stat-label">Servings</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">📊</div>
+                                <div class="stat-value">Medium</div>
+                                <div class="stat-label">Level</div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center gap-2 p-2 bg-red-50 rounded text-sm">
+                                <span class="text-red-600">✓</span>
+                                <span>Pressure cooker tips</span>
+                            </div>
+                            <div class="flex items-center gap-2 p-2 bg-orange-50 rounded text-sm">
+                                <span class="text-orange-600">✓</span>
+                                <span>Time breakdown chart</span>
+                            </div>
+                            <div class="flex items-center gap-2 p-2 bg-green-50 rounded text-sm">
+                                <span class="text-green-600">✓</span>
+                                <span>Meal-prep storage guide</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <a href="recipes/beef-kofta.html" class="btn btn-secondary w-full">
+                            Start Cooking �
+                        </a>
+                    </div>
+                </article>
+
                 <!-- Egg Bhurji Card -->
                 <article class="card slide-up">
                     <div class="card-header text-center">
                         <div class="text-6xl mb-4">🍳</div>
-                        <h3 class="heading-1 mb-2">The Ultimate Egg Bhurji</h3>
+                        <h3 class="heading-1 mb-2">Ultimate Egg Bhurji</h3>
                         <p class="text-gray-600">Perfect Indian scrambled eggs in 15 minutes</p>
                     </div>
                     
@@ -152,7 +272,7 @@
                             <div class="stat-item">
                                 <div class="stat-icon">⏱️</div>
                                 <div class="stat-value">15 min</div>
-                                <div class="stat-label">Total Time</div>
+                                <div class="stat-label">Total</div>
                             </div>
                             <div class="stat-item">
                                 <div class="stat-icon">👥</div>
@@ -162,29 +282,22 @@
                             <div class="stat-item">
                                 <div class="stat-icon">📊</div>
                                 <div class="stat-value">Easy</div>
-                                <div class="stat-label">Difficulty</div>
+                                <div class="stat-label">Level</div>
                             </div>
                         </div>
 
-                        <div class="space-y-4 mb-8">
-                            <h4 class="heading-4">Interactive Features:</h4>
-                            <div class="grid grid-cols-1 gap-3">
-                                <div class="flex items-center gap-3 p-3 bg-yellow-50 rounded-lg">
-                                    <span class="text-yellow-600 text-xl">✓</span>
-                                    <span class="body-small">Real-time serving calculator</span>
-                                </div>
-                                <div class="flex items-center gap-3 p-3 bg-red-50 rounded-lg">
-                                    <span class="text-red-600 text-xl">✓</span>
-                                    <span class="body-small">Guided step navigation</span>
-                                </div>
-                                <div class="flex items-center gap-3 p-3 bg-indigo-50 rounded-lg">
-                                    <span class="text-indigo-600 text-xl">✓</span>
-                                    <span class="body-small">Flavor customization options</span>
-                                </div>
-                                <div class="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
-                                    <span class="text-green-600 text-xl">✓</span>
-                                    <span class="body-small">Visual flavor profile chart</span>
-                                </div>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center gap-2 p-2 bg-yellow-50 rounded text-sm">
+                                <span class="text-yellow-600">✓</span>
+                                <span>Real-time calculator</span>
+                            </div>
+                            <div class="flex items-center gap-2 p-2 bg-indigo-50 rounded text-sm">
+                                <span class="text-indigo-600">✓</span>
+                                <span>Flavor variations</span>
+                            </div>
+                            <div class="flex items-center gap-2 p-2 bg-pink-50 rounded text-sm">
+                                <span class="text-pink-600">✓</span>
+                                <span>Visual flavor chart</span>
                             </div>
                         </div>
                     </div>

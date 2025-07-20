@@ -6,6 +6,14 @@ A curated collection of beautifully designed, interactive recipe guides that tra
 
 🔗 **[View Live Site](https://your-username.github.io/recipes)**
 
+# Interactive Recipe Collection 🍳
+
+A curated collection of beautifully designed, interactive recipe guides that transform cooking from chore to craft. Each recipe features dynamic ingredient calculators, step-by-step guidance, and modern web design.
+
+## Live Demo
+
+🔗 **[View Live Site](https://your-username.github.io/recipes)**
+
 ## 📚 Recipe Collection
 
 ### 🍛 The Bachelor's Beef Mandi
@@ -22,6 +30,21 @@ A comprehensive masterclass guide to creating authentic Beef Mandi using modern 
 
 **[👨‍🍳 Start Cooking](recipes/beef-mandi.html)**
 
+### 🥩 Bachelor's Bulk-Batch Beef Kofta
+*Perfect meal-prep with pressure cooker efficiency*
+
+An interactive guide to making delicious Indian beef meatballs (kofta) in curry. Designed for meal prep with pressure cooker tips, storage guides, and portion planning.
+
+**Features:**
+- Interactive time breakdown chart
+- Pressure cooker pro-tips and safety guide
+- Dynamic serving calculator (2-12 servings)
+- Comprehensive storage and reheating instructions
+- Step-by-step kofta shaping technique
+- Meal prep portion planning
+
+**[🍛 Start Cooking](recipes/beef-kofta.html)**
+
 ### 🍳 The Ultimate Egg Bhurji
 *Perfect Indian scrambled eggs in 15 minutes*
 
@@ -29,7 +52,7 @@ An interactive guide to mastering the classic Indian breakfast dish with modern 
 
 **Features:**
 - Interactive serving adjuster with real-time calculations
-- Guided step-by-step navigation
+- Compact step-by-step instructions
 - Flavor customization options (Creamy, Tangy, Cheesy, Parsi-style)
 - Visual flavor profile radar chart
 - SEO optimized with rich snippets
