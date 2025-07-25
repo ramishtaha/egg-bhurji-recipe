@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Master's Hyderabadi Beef Biryani | Interactive Recipe Guide | Culinary Craft</title>
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="manifest" href="../assets/site.webmanifest">
+    
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="description" content="Master authentic Hyderabadi Beef Biryani with our comprehensive interactive guide. Features beef cut selection, serving calculator, traditional dum cooking techniques, and expert troubleshooting tips.">
+    <meta name="keywords" content="hyderabadi beef biryani recipe, beef biryani, dum biryani, traditional biryani recipe, interactive cooking guide, beef cuts for biryani, biryani masala, birista recipe">
+    <meta name="author" content="Culinary Craft">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yoursite.com/recipes/hyderabadi-beef-biryani.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Master's Hyderabadi Beef Biryani | Interactive Recipe Guide">
+    <meta property="og:description" content="Master authentic Hyderabadi Beef Biryani with beef cut selection, serving calculator, and traditional dum cooking techniques.">
+    <meta property="og:image" content="https://yoursite.com/assets/beef-biryani-og.jpg">
+    <meta property="og:url" content="https://yoursite.com/recipes/hyderabadi-beef-biryani.html">
+    <meta property="og:site_name" content="Culinary Craft">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Master's Hyderabadi Beef Biryani">
+    <meta name="twitter:description" content="Interactive guide to authentic Hyderabadi Beef Biryani with beef cut selection and expert techniques.">
+    <meta name="twitter:image" content="https://yoursite.com/assets/beef-biryani-twitter.jpg">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/design-system.css">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Recipe",
+      "name": "The Master's Hyderabadi Beef Biryani",
+      "description": "A comprehensive interactive guide to creating authentic Hyderabadi Beef Biryani with traditional dum cooking techniques and expert guidance.",
+      "keywords": "hyderabadi beef biryani, beef biryani, dum cooking, traditional biryani",
+      "author": {
+        "@type": "Person",
+        "name": "Culinary Craft"
+      },
+      "prepTime": "PT45M",
+      "cookTime": "PT2H",
+      "totalTime": "PT2H45M",
+      "recipeYield": "4-6 servings",
+      "recipeCategory": "Main Course",
+      "recipeCuisine": "Indian, Hyderabadi",
+      "nutrition": {
+        "@type": "NutritionInformation",
+        "calories": "720 kcal"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "234"
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between">
+                <a href="../index.html" class="nav-brand">
+                    🍳 Culinary Craft
+                </a>
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="../index.html#recipes" class="nav-link">← Back to Recipes</a>
+                    <a href="#ingredients" class="nav-link">Ingredients</a>
+                    <a href="#instructions" class="nav-link">Instructions</a>
+                    <a href="#troubleshooting" class="nav-link">Tips</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container mx-auto max-w-6xl px-6 py-4">
+        <nav class="breadcrumb">
+            <a href="../index.html" class="hover:text-orange-600">Home</a>
+            <span class="breadcrumb-separator">→</span>
+            <span>Hyderabadi Beef Biryani</span>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <main class="recipe-page">
+        <div class="container mx-auto max-w-6xl">
+            <section class="recipe-hero-modern fade-in">
+                <span class="recipe-emoji-large">🥩</span>
+                <h1 class="recipe-title-main">The Master's Hyderabadi Beef Biryani</h1>
+                <p class="recipe-subtitle">
+                    Discover the art of authentic Hyderabadi Beef Biryani with our comprehensive interactive guide. 
+                    From selecting the perfect beef cut to mastering the traditional dum technique.
+                </p>
+                
+                <!-- Recipe Stats -->
+                <div class="recipe-stats">
+                    <div class="stat-item">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-value">2h 45m</div>
+                        <div class="stat-label">Total Time</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-value" id="hero-servings">4-6</div>
+                        <div class="stat-label">Servings</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-value">Advanced</div>
+                        <div class="stat-label">Difficulty</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">🔥</div>
+                        <div class="stat-value">720</div>
+                        <div class="stat-label">Calories</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Controls -->
+            <section class="recipe-controls slide-up">
+                <div class="control-section">
+                    <div class="control-label">Adjust Serving Size</div>
+                    <div class="serving-calculator">
+                        <div class="serving-control">
+                            <button id="minusBtn" class="serving-btn">−</button>
+                            <span class="serving-display">
+                                <span id="serving-count">4</span> servings
+                            </span>
+                            <button id="plusBtn" class="serving-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Beef Cut Selection -->
+        <section id="beef-selection" class="slide-up container mx-auto max-w-6xl px-6 py-8">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h2 class="heading-2 mb-4">Choose Your Perfect Beef Cut</h2>
+                    <p class="body-large text-gray-600">
+                        The foundation of great biryani starts with the right cut. Look for meat with ample fat and collagen for succulent results.
+                    </p>
+                </div>
+                <div class="card-body">
+                    <div class="flex flex-wrap justify-center gap-3 mb-6" id="beef-selector">
+                        <button data-cut="chuck" class="btn btn-secondary selected">Beef Chuck</button>
+                        <button data-cut="short-ribs" class="btn btn-ghost">Short Ribs</button>
+                        <button data-cut="brisket" class="btn btn-ghost">Brisket</button>
+                        <button data-cut="stewing" class="btn btn-ghost">Stewing Beef</button>
+                    </div>
+                    <div id="beef-details" class="card glass-effect">
+                        <!-- JS will populate this -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ingredients Section -->
+        <section id="ingredients" class="slide-up container mx-auto max-w-6xl px-6 py-8">
+            <div class="accordion-section">
+                <button class="accordion-toggle">
+                    <span>📝 Ingredients Checklist</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div class="ingredient-checklist">
+                                <h3 class="ingredient-group-title">For the Beef & Marinade</h3>
+                                <ul class="ingredient-list">
+                                    <li><span class="ingredient-quantity" id="beef-qty">500g</span> <span>Beef (your selected cut)</span></li>
+                                    <li><span class="ingredient-quantity" id="yogurt-qty">1 cup</span> <span>Plain full-fat yogurt</span></li>
+                                    <li><span class="ingredient-quantity" id="ginger-garlic-qty">2 tbsp</span> <span>Ginger-garlic paste</span></li>
+                                    <li><span class="ingredient-quantity" id="green-chilies-qty">2-3</span> <span>Green chilies, slit</span></li>
+                                    <li><span class="ingredient-quantity" id="chili-powder-qty">1.5 tsp</span> <span>Red chili powder</span></li>
+                                    <li><span class="ingredient-quantity" id="turmeric-qty">0.5 tsp</span> <span>Turmeric powder</span></li>
+                                    <li><span class="ingredient-quantity" id="salt-marinade-qty">1.5 tsp</span> <span>Salt</span></li>
+                                    <li><span class="ingredient-quantity" id="biryani-masala-qty">2 tbsp</span> <span>Biryani masala powder</span></li>
+                                    <li><span class="ingredient-quantity" id="lemon-juice-qty">1/2</span> <span>Lemon, juiced</span></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="ingredient-checklist">
+                                <h3 class="ingredient-group-title">For the Rice</h3>
+                                <ul class="ingredient-list">
+                                    <li><span class="ingredient-quantity" id="rice-qty">1.5 cups</span> <span>Aged Basmati rice</span></li>
+                                    <li><span class="ingredient-quantity" id="water-qty">6 cups</span> <span>Water (for boiling)</span></li>
+                                    <li>Whole spices: 2 bay leaves, 4-5 green cardamoms, 4-5 cloves, 2-inch cinnamon stick</li>
+                                    <li><span class="ingredient-quantity" id="salt-boiling-qty">2 tbsp</span> <span>Salt (for boiling water)</span></li>
+                                    <li><span class="ingredient-quantity" id="oil-rice-qty">1 tsp</span> <span>Oil</span></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="ingredient-checklist">
+                                <h3 class="ingredient-group-title">For Assembly & Finishing</h3>
+                                <ul class="ingredient-list">
+                                    <li><span class="ingredient-quantity" id="onions-qty">1/2 cup</span> <span>Fried onions (birista)</span></li>
+                                    <li><span class="ingredient-quantity" id="mint-qty">1/2 cup</span> <span>Fresh mint leaves</span></li>
+                                    <li><span class="ingredient-quantity" id="coriander-qty">1/4 cup</span> <span>Fresh coriander leaves</span></li>
+                                    <li>Saffron: Large pinch, soaked in 2 tbsp warm milk</li>
+                                    <li><span class="ingredient-quantity" id="ghee-qty">3 tbsp</span> <span>Ghee or oil</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Method Selection -->
+        <section class="slide-up container mx-auto max-w-6xl px-6 py-8">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h2 class="heading-2 mb-4">Choose Your Approach</h2>
+                    <p class="body-large text-gray-600 mb-6">
+                        Understanding the aromatics impact on your biryani's final flavor.
+                    </p>
+                    <div style="position: relative; height: 400px; width: 100%; max-width: 600px; margin: 0 auto;">
+                        <canvas id="aromaticsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instructions Section -->
+        <section id="instructions" class="slide-up container mx-auto max-w-6xl px-6 py-8">
+            <div class="accordion-section">
+                <button class="accordion-toggle">
+                    <span>👩‍🍳 Cooking Instructions</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <div class="space-y-8" id="recipe-steps">
+                            <!-- Recipe steps will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Troubleshooting Section -->
+        <section id="troubleshooting" class="slide-up container mx-auto max-w-6xl px-6 py-8">
+            <div class="accordion-section">
+                <button class="accordion-toggle">
+                    <span>🔧 Troubleshooting Guide</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="heading-3 mb-4">Common Problems</h3>
+                                <div class="space-y-4" id="troubleshooting-steps">
+                                    <!-- Troubleshooting items will be populated by JavaScript -->
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="heading-3 mb-4">Serving & Pairing</h3>
+                                <div class="card glass-effect">
+                                    <div class="card-body space-y-6">
+                                        <div>
+                                            <h4 class="heading-4 mb-2">The Final Rest</h4>
+                                            <p class="body-text">After cooking, let the biryani rest, sealed, for 15-20 minutes. This is critical for fluffy, perfect rice as moisture redistributes.</p>
+                                        </div>
+                                        <div>
+                                            <h4 class="heading-4 mb-2">Perfect Cucumber Raita</h4>
+                                            <p class="body-text">A cooling raita is the classic pairing. Whisk 1 cup plain yogurt, then stir in 1/2 cup grated cucumber, 1/4 cup chopped onion, and a pinch of salt and roasted cumin powder. Chill and serve.</p>
+                                        </div>
+                                        <div>
+                                            <h4 class="heading-4 mb-2">Storing Leftovers</h4>
+                                            <p class="body-text">Biryani tastes even better the next day. Store in an airtight container in the fridge for up to 3 days. Reheat gently in a microwave or by steaming.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3 class="footer-title">Culinary Craft</h3>
+                <p class="footer-description">Crafting exceptional recipe experiences with love and precision.</p>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h4>Recipes</h4>
+                    <a href="../index.html#recipes">All Recipes</a>
+                    <a href="../recipes/beef-mandi.html">Beef Mandi</a>
+                    <a href="../recipes/hyderabadi-chicken-biryani.html">Chicken Biryani</a>
+                </div>
+                <div>
+                    <h4>About</h4>
+                    <a href="../index.html#about">Our Story</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Culinary Craft. Made with ❤️ for food lovers everywhere.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const beefData = {
+                chuck: {
+                    title: 'Beef Chuck',
+                    description: 'The all-around best choice. Rich, beefy, and high in fat and collagen, it becomes incredibly tender and flavorful during the slow cook.',
+                    time: '1.5 - 2 hours'
+                },
+                'short-ribs': {
+                    title: 'Beef Short Ribs',
+                    description: 'For maximum luxury. The bones and high fat content create a deep, intense flavor. The meat becomes fall-apart tender.',
+                    time: '1.5 - 2 hours'
+                },
+                brisket: {
+                    title: 'Beef Brisket',
+                    description: 'A robust, savory cut that excels in slow cooking. It requires a bit more time but rewards with exceptionally tender results.',
+                    time: '2+ hours'
+                },
+                stewing: {
+                    title: 'Stewing Beef',
+                    description: 'An accessible option. Ensure you get a fatty cut, not lean. It provides good flavor and texture for biryani.',
+                    time: '1.5 - 2 hours'
+                }
+            };
+
+            const beefSelector = document.getElementById('beef-selector');
+            const beefDetails = document.getElementById('beef-details');
+
+            function updateBeefDetails(cut) {
+                const data = beefData[cut];
+                beefDetails.innerHTML = `
+                    <h4 class="heading-4 mb-2">${data.title}</h4>
+                    <p class="body-text mb-3">${data.description}</p>
+                    <div class="badge badge-secondary">
+                        <span class="font-bold">Dum Time:</span> ${data.time}
+                    </div>
+                `;
+                beefSelector.querySelectorAll('button').forEach(btn => {
+                    btn.classList.remove('selected');
+                    btn.classList.remove('btn-secondary');
+                    btn.classList.add('btn-ghost');
+                });
+                beefSelector.querySelector(`[data-cut="${cut}"]`).classList.add('selected', 'btn-secondary');
+                beefSelector.querySelector(`[data-cut="${cut}"]`).classList.remove('btn-ghost');
+            }
+
+            beefSelector.addEventListener('click', (e) => {
+                if (e.target.matches('button[data-cut]')) {
+                    const cut = e.target.dataset.cut;
+                    updateBeefDetails(cut);
+                }
+            });
+
+            updateBeefDetails('chuck');
+
+            const recipeData = [
+                {
+                    title: 'Stage 1: The Marinade',
+                    content: `
+                        <p class="mb-4">This is where you build the foundational flavor and tenderize the meat. You have two choices for marination time, which will impact your cooking process.</p>
+                        <div class="bg-amber-50 p-4 rounded-lg">
+                            <h5 class="font-bold text-lg mb-2">Marinade Ingredients:</h5>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1">
+                                <li>1 cup plain, full-fat yogurt</li>
+                                <li>2 tbsp ginger-garlic paste</li>
+                                <li>2-3 green chilies, slit</li>
+                                <li>1.5 tsp red chili powder</li>
+                                <li>0.5 tsp turmeric powder</li>
+                                <li>1.5 tsp salt</li>
+                                <li>2 tbsp Biryani Masala (homemade or store-bought)</li>
+                                <li>Juice of 1/2 lemon</li>
+                                <li>1/2 cup fried onions (birista)</li>
+                                <li>Half of your fresh herbs (1/2 cup coriander, 1/4 cup mint)</li>
+                            </ul>
+                        </div>
+                        <div class="mt-4 grid md:grid-cols-2 gap-4">
+                            <div class="border-2 border-dashed border-orange-300 p-4 rounded-lg">
+                                <h6 class="font-bold text-center text-lg">Express Route (45-60 Mins)</h6>
+                                <p class="text-sm text-center text-gray-600">Add 2 tbsp of raw papaya paste to the marinade. This powerful tenderizer works quickly. Do not marinate for longer than an hour, or the meat can become mushy.</p>
+                            </div>
+                            <div class="border-2 border-dashed border-teal-400 p-4 rounded-lg">
+                                <h6 class="font-bold text-center text-lg">Heritage Route (4+ Hours)</h6>
+                                <p class="text-sm text-center text-gray-600">Rely on yogurt and time. This yields a more nuanced flavor. Cover and refrigerate for at least 4 hours, or preferably overnight.</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    title: 'Stage 2: The Assembly (Teh-ba-Teh)',
+                    content: `
+                        <p class="mb-4">Use a heavy-bottomed pot or Dutch oven. Layering is key to the final texture and presentation.</p>
+                        <ol class="list-decimal list-inside space-y-3 text-gray-700">
+                            <li><b>Base:</b> Add 1 tbsp of ghee or oil to the bottom of the pot to prevent sticking.</li>
+                            <li><b>Meat Layer:</b> Spread the entire batch of marinated beef in an even layer.</li>
+                            <li><b>Aromatics Layer:</b> Sprinkle the remaining fried onions and fresh herbs over the meat.</li>
+                            <li><b>Rice Layer:</b> Gently spoon the 70% cooked Basmati rice over the meat. Do not press down.</li>
+                            <li><b>Finishing Touches:</b> Drizzle a pinch of saffron soaked in 2 tbsp warm milk over the rice. Drizzle 2 tbsp of melted ghee over the top.</li>
+                        </ol>
+                    `
+                },
+                {
+                    title: 'Stage 3: The Dum (Final Steam)',
+                    content: `
+                        <p class="mb-4">This is the final, crucial step. The goal is to create a sealed environment to trap steam and fuse the flavors.</p>
+                        <ol class="list-decimal list-inside space-y-3 text-gray-700">
+                            <li><b>Heat Management:</b> Place a flat iron griddle (tawa) on your burner and put the pot on top. This prevents scorching.</li>
+                            <li><b>Initial Steam (5-10 mins):</b> Heat the pot on medium-high to quickly generate steam.</li>
+                            <li><b>Slow Cook (1-1.5 hours):</b> Reduce heat to the absolute lowest setting. Let it cook undisturbed.</li>
+                            <li><b>The Seal:</b> The easiest way is to cover the pot with heavy-duty aluminum foil and press the lid on tightly. A traditional dough seal also works perfectly.</li>
+                            <li><b>The Rest (15-20 mins):</b> Turn off the heat and let the pot sit, sealed, for at least 15 minutes. DO NOT SKIP THIS STEP!</li>
+                        </ol>
+                    `
+                }
+            ];
+            
+            const recipeSteps = document.getElementById('recipe-steps');
+            recipeData.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.className = 'card glass-effect';
+                div.innerHTML = `
+                    <div class="card-header">
+                        <h4 class="heading-4">${item.title}</h4>
+                    </div>
+                    <div class="card-body">
+                        ${item.content}
+                    </div>
+                `;
+                recipeSteps.appendChild(div);
+            });
+
+            const troubleshootingData = [
+                {
+                    title: 'Problem: Rice is mushy or clumpy',
+                    content: `
+                        <p><strong class="text-gray-700">Likely Causes:</strong> Rice wasn't washed enough, it was over-boiled (cooked more than 70%), or the marinade was too watery.</p>
+                        <p class="mt-2"><strong class="text-gray-700">Solution Next Time:</strong> Wash rice until water is clear. Boil for only 5-7 minutes. Ensure your marinade is thick, not runny. Use a tight seal on the pot.</p>
+                    `
+                },
+                {
+                    title: 'Problem: Meat is tough or chewy',
+                    content: `
+                        <p><strong class="text-gray-700">Likely Causes:</strong> Wrong cut of beef (too lean), insufficient marination time, or the 'dum' cooking time was too short.</p>
+                        <p class="mt-2"><strong class="text-gray-700">Solution Next Time:</strong> Use a fatty cut like chuck. Marinate overnight or use papaya paste for the express route. Cook on low heat for the full 1-1.5 hours.</p>
+                    `
+                },
+                {
+                    title: 'Problem: Bottom layer is burnt',
+                    content: `
+                        <p><strong class="text-gray-700">Likely Causes:</strong> Pot isn't heavy-bottomed, heat was too high, or you didn't use a tawa (griddle) to diffuse the heat.</p>
+                        <p class="mt-2"><strong class="text-gray-700">Solution Next Time:</strong> Always use a heavy-bottomed Dutch oven. Always place it on a tawa. Keep the heat on the absolute lowest setting during the slow cook.</p>
+                    `
+                },
+                 {
+                    title: 'Problem: Flavor is bland',
+                    content: `
+                        <p><strong class="text-gray-700">Likely Causes:</strong> Rice water was under-salted, not enough fat (ghee/oil), low-quality masala, or not enough fresh herbs.</p>
+                        <p class="mt-2"><strong class="text-gray-700">Solution Next Time:</strong> Salt the rice water until it tastes like the sea. Be generous with ghee. Use high-quality or homemade aromatics and plenty of fresh mint and coriander.</p>
+                    `
+                }
+            ];
+
+            const troubleshootingSteps = document.getElementById('troubleshooting-steps');
+            troubleshootingData.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'card glass-effect';
+                div.innerHTML = `
+                    <div class="card-header">
+                        <h5 class="heading-5 text-error-600">${item.title}</h5>
+                    </div>
+                    <div class="card-body">
+                        ${item.content}
+                    </div>
+                `;
+                troubleshootingSteps.appendChild(div);
+            });
+
+
+            // Setup accordion functionality for design system accordions
+            document.querySelectorAll('.accordion-toggle').forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.accordion-icon');
+                    
+                    // Close all other accordions first
+                    document.querySelectorAll('.accordion-content').forEach(otherContent => {
+                        if (otherContent !== content) {
+                            otherContent.classList.remove('open');
+                            otherContent.style.maxHeight = null;
+                            const otherIcon = otherContent.previousElementSibling.querySelector('.accordion-icon');
+                            if (otherIcon) {
+                                otherIcon.style.transform = 'rotate(0deg)';
+                            }
+                        }
+                    });
+                    
+                    if (content.classList.contains('open')) {
+                        content.classList.remove('open');
+                        content.style.maxHeight = null;
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        content.classList.add('open');
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+
+            // Serving calculator functionality
+            const servingCount = document.getElementById('serving-count');
+            const heroServings = document.getElementById('hero-servings');
+            const minusBtn = document.getElementById('minusBtn');
+            const plusBtn = document.getElementById('plusBtn');
+
+            let currentServings = 4;
+            const baseServings = 4;
+
+            function updateServings(newServings) {
+                currentServings = newServings;
+                servingCount.textContent = newServings;
+                heroServings.textContent = newServings + (newServings > 6 ? '+' : '');
+                
+                const multiplier = newServings / baseServings;
+                
+                // Update ingredient quantities
+                document.querySelectorAll('.ingredient-quantity').forEach(qty => {
+                    const baseValue = qty.dataset.base || qty.textContent;
+                    if (!qty.dataset.base) {
+                        qty.dataset.base = baseValue;
+                    }
+                    
+                    if (baseValue.includes('cup')) {
+                        const numMatch = baseValue.match(/[\d.\/]+/);
+                        if (numMatch) {
+                            const num = eval(numMatch[0]) * multiplier;
+                            qty.textContent = baseValue.replace(numMatch[0], (num % 1 === 0 ? num.toString() : num.toFixed(1)));
+                        }
+                    } else if (baseValue.includes('g')) {
+                        const numMatch = baseValue.match(/\d+/);
+                        if (numMatch) {
+                            const num = parseInt(numMatch[0]) * multiplier;
+                            qty.textContent = baseValue.replace(numMatch[0], Math.round(num));
+                        }
+                    } else if (baseValue.includes('tbsp') || baseValue.includes('tsp')) {
+                        const numMatch = baseValue.match(/[\d.\/]+/);
+                        if (numMatch) {
+                            const num = eval(numMatch[0]) * multiplier;
+                            qty.textContent = baseValue.replace(numMatch[0], (num % 1 === 0 ? num.toString() : num.toFixed(1)));
+                        }
+                    }
+                });
+            }
+
+            minusBtn.addEventListener('click', () => {
+                if (currentServings > 2) {
+                    updateServings(currentServings - 1);
+                }
+            });
+
+            plusBtn.addEventListener('click', () => {
+                if (currentServings < 12) {
+                    updateServings(currentServings + 1);
+                }
+            });
+
+            const ctx = document.getElementById('aromaticsChart').getContext('2d');
+            const aromaticsChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Birista (Fried Onions)', 'Biryani Masala'],
+                    datasets: [{
+                        label: 'Flavor Impact (Heritage/Homemade)',
+                        data: [9, 10],
+                        backgroundColor: '#C06014',
+                        borderColor: '#A05010',
+                        borderWidth: 1
+                    }, {
+                        label: 'Flavor Impact (Express/Store-bought)',
+                        data: [5, 6],
+                        backgroundColor: '#FBBF24',
+                        borderColor: '#D99F0B',
+                        borderWidth: 1
+                    }, {
+                        label: 'Effort Level',
+                        data: [8, 7],
+                        backgroundColor: '#6B7280',
+                        borderColor: '#4B5563',
+                        borderWidth: 1,
+                        hidden: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 10,
+                            title: {
+                                display: true,
+                                text: 'Rating (out of 10)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Aromatics: Homemade vs. Store-Bought',
+                            font: {
+                                size: 16
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                footer: (tooltipItems) => {
+                                    if (tooltipItems[0].dataset.label.includes('Homemade')) {
+                                        return 'Highest quality, but requires time.';
+                                    }
+                                    return 'Convenient, but a compromise on flavor.';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            
+            // Scroll spy for navigation
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section[id]');
+
+            function updateActiveNavLink() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    if (window.pageYOffset >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current) && current !== '') {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', updateActiveNavLink);
+            updateActiveNavLink();
+
+        });
+    </script>
+</body>
+</html>

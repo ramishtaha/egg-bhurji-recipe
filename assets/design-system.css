@@ -527,6 +527,32 @@ body {
     text-align: center;
 }
 
+/* Badges */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 500;
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-light);
+}
+
+.badge-secondary {
+    background: var(--secondary-100);
+    color: var(--secondary-700);
+    border-color: var(--secondary-200);
+}
+
+.badge-primary {
+    background: var(--primary-100);
+    color: var(--primary-700);
+    border-color: var(--primary-200);
+}
+
 /* Utility Classes */
 .glass-effect {
     background: var(--bg-card);
@@ -921,4 +947,21 @@ body {
         flex-wrap: wrap;
         justify-content: center;
     }
+}
+
+/* Semantic Text Colors */
+.text-error-600 {
+    color: var(--error);
+}
+
+.text-success-600 {
+    color: var(--success);
+}
+
+.text-warning-600 {
+    color: var(--warning);
+}
+
+.text-info-600 {
+    color: var(--info);
 }

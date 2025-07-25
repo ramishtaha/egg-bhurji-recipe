@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Open Beef Biryani Recipe",
+			"type": "shell",
+			"command": "start",
+			"args": [
+				"recipes\\hyderabadi-beef-biryani.html"
+			],
+			"group": "test"
+		}
+	]
+}

@@ -241,6 +241,22 @@ Enhanced version with better styling:
 </div>
 ```
 
+#### Ingredient Selection Widgets
+For recipes requiring specific ingredient choices (like beef cuts, rice types, etc.):
+```html
+<div class="ingredient-selector">
+    <div class="selector-buttons">
+        <button class="btn btn-secondary selected" data-option="chuck">Beef Chuck</button>
+        <button class="btn btn-ghost" data-option="short-ribs">Short Ribs</button>
+        <button class="btn btn-ghost" data-option="brisket">Brisket</button>
+        <button class="btn btn-ghost" data-option="stewing">Stewing Beef</button>
+    </div>
+    <div class="selection-details card glass-effect">
+        <!-- Selection details populated by JavaScript -->
+    </div>
+</div>
+```
+
 ### Recipe Page Layout
 
 #### Basic Structure
