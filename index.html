@@ -13,8 +13,8 @@
     <link rel="manifest" href="assets/site.webmanifest">
     
     <!-- Enhanced SEO Meta Tags -->
-    <meta name="description" content="Discover free interactive recipe guides for Beef Mandi, Beef Kofta, Egg Bhurji & more. Features smart calculators, step-by-step instructions, and mobile-friendly design. Cook with confidence today!">
-    <meta name="keywords" content="interactive recipes, free recipe calculator, beef mandi recipe, beef kofta recipe, egg bhurji recipe, indian cooking, step by step cooking guide, mobile recipes, cooking for beginners, recipe conversion calculator">
+    <meta name="description" content="Discover free interactive recipe guides for Beef Mandi, Hyderabadi Chicken Biryani, Beef Kofta, Egg Bhurji & more. Features smart calculators, difficulty toggles, step-by-step instructions, and mobile-friendly design. Cook with confidence today!">
+    <meta name="keywords" content="interactive recipes, free recipe calculator, beef mandi recipe, hyderabadi biryani recipe, beef kofta recipe, egg bhurji recipe, indian cooking, step by step cooking guide, mobile recipes, cooking for beginners, recipe conversion calculator, biryani recipe">
     <meta name="author" content="Culinary Craft">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://yoursite.com/">
@@ -22,7 +22,7 @@
     <!-- Open Graph Meta Tags for Social Media -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Interactive Recipe Collection | Culinary Craft">
-    <meta property="og:description" content="Free interactive cooking guides with smart calculators and step-by-step instructions. Perfect recipes for beginners and experts alike!">
+    <meta property="og:description" content="Free interactive cooking guides with smart calculators, difficulty toggles and step-by-step instructions. Perfect recipes for beginners and experts alike!">
     <meta property="og:image" content="https://yoursite.com/assets/og-image.jpg">
     <meta property="og:url" content="https://yoursite.com/">
     <meta property="og:site_name" content="Culinary Craft">
@@ -30,7 +30,7 @@
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Interactive Recipe Collection | Culinary Craft">
-    <meta name="twitter:description" content="Free interactive cooking guides with smart calculators and step-by-step instructions.">
+    <meta name="twitter:description" content="Free interactive cooking guides with smart calculators, difficulty toggles and step-by-step instructions.">
     <meta name="twitter:image" content="https://yoursite.com/assets/twitter-image.jpg">
     
     <!-- Structured Data for SEO -->
@@ -63,6 +63,17 @@
           {
             "@type": "Recipe",
             "position": 2,
+            "name": "The Bachelor's Hyderabadi Chicken Biryani",
+            "description": "Authentic royal biryani recipe with difficulty toggle and serving calculator",
+            "url": "https://yoursite.com/recipes/hyderabadi-chicken-biryani.html",
+            "totalTime": "PT2H15M",
+            "recipeYield": "2-12 servings",
+            "recipeCuisine": "Indian, Hyderabadi",
+            "recipeCategory": "Main Course"
+          },
+          {
+            "@type": "Recipe",
+            "position": 3,
             "name": "Bachelor's Bulk-Batch Beef Kofta",
             "description": "Perfect meal-prep beef kofta curry with pressure cooker tips and storage guide",
             "url": "https://yoursite.com/recipes/beef-kofta.html",
@@ -73,7 +84,7 @@
           },
           {
             "@type": "Recipe",
-            "position": 3,
+            "position": 4,
             "name": "The Ultimate Egg Bhurji",
             "description": "Perfect Indian scrambled eggs with serving calculator and flavor variations",
             "url": "https://yoursite.com/recipes/egg-bhurji.html",
@@ -158,7 +169,7 @@
                 </p>
             </div>
 
-            <div class="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
                 <!-- Beef Mandi Card -->
                 <article class="card slide-up">
                     <div class="card-header text-center">
@@ -209,6 +220,56 @@
                     </div>
                 </article>
 
+                <!-- Hyderabadi Chicken Biryani Card -->
+                <article class="card slide-up">
+                    <div class="card-header text-center">
+                        <div class="text-6xl mb-4">🍛</div>
+                        <h3 class="heading-1 mb-2">Hyderabadi Chicken Biryani</h3>
+                        <p class="text-gray-600">Authentic royal recipe with difficulty toggle</p>
+                    </div>
+                    
+                    <div class="card-body">
+                        <div class="recipe-stats mb-6">
+                            <div class="stat-item">
+                                <div class="stat-icon">⏱️</div>
+                                <div class="stat-value">2h 15m</div>
+                                <div class="stat-label">Total</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">👥</div>
+                                <div class="stat-value">2-12</div>
+                                <div class="stat-label">Servings</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">📊</div>
+                                <div class="stat-value">Medium</div>
+                                <div class="stat-label">Level</div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center gap-2 p-2 bg-amber-50 rounded text-sm">
+                                <span class="text-amber-600">✓</span>
+                                <span>Difficulty toggle switch</span>
+                            </div>
+                            <div class="flex items-center gap-2 p-2 bg-emerald-50 rounded text-sm">
+                                <span class="text-emerald-600">✓</span>
+                                <span>Traditional dum technique</span>
+                            </div>
+                            <div class="flex items-center gap-2 p-2 bg-rose-50 rounded text-sm">
+                                <span class="text-rose-600">✓</span>
+                                <span>Authentic spice masala</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <a href="recipes/hyderabadi-chicken-biryani.html" class="btn btn-secondary w-full">
+                            Start Cooking 🍛
+                        </a>
+                    </div>
+                </article>
+
                 <!-- Beef Kofta Card -->
                 <article class="card slide-up">
                     <div class="card-header text-center">
@@ -254,7 +315,7 @@
 
                     <div class="card-footer">
                         <a href="recipes/beef-kofta.html" class="btn btn-secondary w-full">
-                            Start Cooking �
+                            Start Cooking 🍖
                         </a>
                     </div>
                 </article>

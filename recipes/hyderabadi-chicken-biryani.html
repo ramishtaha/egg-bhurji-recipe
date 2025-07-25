@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bachelor's Hyderabadi Chicken Biryani | Interactive Recipe Guide | Culinary Craft</title>
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="manifest" href="../assets/site.webmanifest">
+    
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="description" content="Master authentic Hyderabadi Chicken Biryani with our interactive guide. Features difficulty toggle, serving calculator, and step-by-step masterclass. Perfect for home cooks and bachelors!">
+    <meta name="keywords" content="hyderabadi biryani recipe, chicken biryani, dum biryani, biryani masala, interactive cooking guide, bachelor cooking, indian biryani recipe, authentic biryani">
+    <meta name="author" content="Culinary Craft">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yoursite.com/recipes/hyderabadi-chicken-biryani.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Bachelor's Hyderabadi Chicken Biryani | Interactive Recipe Guide">
+    <meta property="og:description" content="Master authentic Hyderabadi Chicken Biryani with difficulty toggle, serving calculator, and traditional dum cooking techniques.">
+    <meta property="og:image" content="https://yoursite.com/assets/biryani-og.jpg">
+    <meta property="og:url" content="https://yoursite.com/recipes/hyderabadi-chicken-biryani.html">
+    <meta property="og:site_name" content="Culinary Craft">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Bachelor's Hyderabadi Chicken Biryani">
+    <meta name="twitter:description" content="Interactive guide to authentic Hyderabadi Biryani with difficulty options and serving calculator.">
+    <meta name="twitter:image" content="https://yoursite.com/assets/biryani-twitter.jpg">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/design-system.css">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Recipe",
+      "name": "The Bachelor's Hyderabadi Chicken Biryani",
+      "description": "A comprehensive interactive guide to creating authentic Hyderabadi Chicken Biryani with difficulty toggle and serving calculator. Perfect for home cooks.",
+      "keywords": "hyderabadi biryani, chicken biryani, dum cooking, biryani masala, interactive recipe",
+      "author": {
+        "@type": "Person",
+        "name": "Culinary Craft"
+      },
+      "prepTime": "PT45M",
+      "cookTime": "PT1H30M",
+      "totalTime": "PT2H15M",
+      "recipeYield": "2-12 servings",
+      "recipeCategory": "Main Course",
+      "recipeCuisine": "Indian, Hyderabadi",
+      "nutrition": {
+        "@type": "NutritionInformation",
+        "calories": "650 kcal"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "156"
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between">
+                <a href="../index.html" class="nav-brand">
+                    🍳 Culinary Craft
+                </a>
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="../index.html#recipes" class="nav-link">← Back to Recipes</a>
+                    <a href="#ingredients" class="nav-link">Ingredients</a>
+                    <a href="#instructions" class="nav-link">Instructions</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container mx-auto max-w-6xl px-6 py-4">
+        <nav class="breadcrumb">
+            <a href="../index.html" class="hover:text-orange-600">Home</a>
+            <span class="breadcrumb-separator">→</span>
+            <span>Hyderabadi Chicken Biryani</span>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <main class="recipe-page">
+        <section class="recipe-hero-modern fade-in">
+            <span class="recipe-emoji-large">🍛</span>
+            <h1 class="recipe-title-main">The Bachelor's Hyderabadi Biryani</h1>
+            <p class="recipe-subtitle">
+                Master the art of authentic Hyderabadi Biryani with our interactive guide. 
+                Choose your complexity level and scale servings perfectly!
+            </p>
+            
+            <!-- Recipe Stats -->
+            <div class="recipe-stats max-w-2xl mx-auto">
+                <div class="stat-item">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-value">2h 15m</div>
+                    <div class="stat-label">Total Time</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-value" id="hero-servings">2-12</div>
+                    <div class="stat-label">Servings</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-value">Medium</div>
+                    <div class="stat-label">Difficulty</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">🔥</div>
+                    <div class="stat-value">650</div>
+                    <div class="stat-label">Calories</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Controls -->
+        <section class="recipe-controls slide-up">
+            <div class="control-section">
+                <div class="control-label">Cooking Method</div>
+                <div class="difficulty-toggle">
+                    <span class="font-semibold">Quick & Easy</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="difficultyToggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <span class="font-semibold text-orange-600">Taste Focus</span>
+                </div>
+                <p class="text-center body-small text-gray-600">
+                    Toggle between simple steps and more authentic, flavor-focused methods.
+                </p>
+            </div>
+            
+            <div class="control-section">
+                <div class="control-label">Adjust Serving Size</div>
+                <div class="serving-calculator">
+                    <div class="serving-control">
+                        <button id="minusBtn" class="serving-btn">−</button>
+                        <span class="serving-display">
+                            <span id="serving-count">2</span> servings
+                        </span>
+                        <button id="plusBtn" class="serving-btn">+</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Ingredients Section -->
+        <section id="ingredients" class="slide-up">
+            <div class="accordion-section">
+                <button class="accordion-toggle">
+                    <span>📝 Ingredients Checklist</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div class="ingredient-checklist">
+                                <h3 class="ingredient-group-title">For the Chicken Marinade</h3>
+                                <ul class="ingredient-list">
+                                    <li><span class="ingredient-quantity" id="chicken-qty"></span> <span id="chicken-name">Chicken, bone-in, cut into pieces</span></li>
+                                    <li><span class="ingredient-quantity" id="yogurt-qty"></span> <span>Yogurt (Curd), thick</span></li>
+                                    <li><span class="ingredient-quantity" id="ginger-garlic-qty"></span> <span>Ginger-Garlic Paste</span></li>
+                                    <li><span class="ingredient-quantity" id="chili-powder-qty"></span> <span>Red Chili Powder (adjust to heat)</span></li>
+                                    <li><span class="ingredient-quantity" id="turmeric-qty"></span> <span>Turmeric Powder</span></li>
+                                    <li><span class="ingredient-quantity" id="lemon-juice-qty"></span> <span>Lemon Juice</span></li>
+                                    <li><span class="ingredient-quantity" id="salt-marinade-qty"></span> <span>Salt</span></li>
+                                    <li class="biryani-masala-ingredient"><span class="ingredient-quantity" id="biryani-masala-qty"></span> <span>Biryani Masala Powder</span></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="ingredient-checklist">
+                                <h3 class="ingredient-group-title">For the Rice</h3>
+                                <ul class="ingredient-list">
+                                    <li><span class="ingredient-quantity" id="rice-qty"></span> <span>Basmati Rice</span></li>
+                                    <li><span class="ingredient-quantity" id="water-qty"></span> <span>Water (for boiling)</span></li>
+                                    <li>Whole Spices: 1 bay leaf, 2-3 green cardamoms, 2-3 cloves, 1-inch cinnamon stick</li>
+                                    <li><span class="ingredient-quantity" id="salt-boiling-qty"></span> <span>Salt (for boiling water)</span></li>
+                                    <li><span class="ingredient-quantity" id="oil-rice-qty"></span> <span>Oil</span></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="ingredient-checklist">
+                                <h3 class="ingredient-group-title">Other Ingredients</h3>
+                                <ul class="ingredient-list">
+                                    <li class="birista-ingredient"><span class="ingredient-quantity" id="onions-qty"></span> <span id="onion-name">Onions, thinly sliced</span></li>
+                                    <li><span class="ingredient-quantity" id="mint-qty"></span> <span>Mint Leaves, chopped</span></li>
+                                    <li><span class="ingredient-quantity" id="coriander-qty"></span> <span>Coriander Leaves, chopped</span></li>
+                                    <li><span class="ingredient-quantity" id="green-chilies-qty"></span> <span>Green Chilies, slit</span></li>
+                                    <li>Saffron: A generous pinch, soaked in 2 tbsp warm milk</li>
+                                    <li><span class="ingredient-quantity" id="ghee-oil-qty"></span> <span>Ghee / Oil</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instructions Section -->
+        <section id="instructions" class="slide-up">
+            <!-- Step 1: Prep Work -->
+            <div class="accordion-section">
+                <button class="accordion-toggle">
+                    <span>1. The Prep Work: Onions & Masala</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <div id="birista-step" class="method-content"></div>
+                        <div id="masala-step" class="method-content mt-6"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Step 2: Chicken Marinade -->
+            <div class="accordion-section">
+                <button class="accordion-toggle">
+                    <span>2. Marinating the Chicken</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <p class="body-large text-gray-700 mb-4">
+                            This step is crucial for tender, flavorful chicken. The method is the same for both easy and taste-focused approaches, 
+                            but the quality of your ingredients (like homemade masala) will make a difference.
+                        </p>
+                        <ol class="list-decimal list-inside space-y-3">
+                            <li>In a large bowl, combine the chicken pieces with all the ingredients listed under "For the Chicken Marinade".</li>
+                            <li>Add half of the fried onions (Birista), half of the chopped mint, and half of the chopped coriander to the marinade. Mix thoroughly.</li>
+                            <li>Cover the bowl and let it marinate:
+                                <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+                                    <li><strong>Quick Minimum:</strong> 30 minutes on the counter.</li>
+                                    <li><strong>Better Flavor:</strong> 2-4 hours in the refrigerator.</li>
+                                    <li><strong>Best Result:</strong> Overnight in the refrigerator.</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Step 3: Rice -->
+            <div class="accordion-section">
+                <button class="accordion-toggle">
+                    <span>3. Cooking the Basmati Rice</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <p class="body-large text-gray-700 mb-4">
+                            The key here is to only cook the rice to 70% doneness. It will steam for the remaining 30% with the chicken. 
+                            The grains should still have a slight bite to them.
+                        </p>
+                        <ol class="list-decimal list-inside space-y-3">
+                            <li>Wash the basmati rice gently until the water runs clear, then soak it in water for 30 minutes. Drain completely.</li>
+                            <li>In a large pot, bring the calculated amount of water to a rolling boil. Add the salt, whole spices, and oil.</li>
+                            <li>Add the soaked, drained rice to the boiling water.</li>
+                            <li>Cook for about 5-7 minutes. To check for doneness, press a grain of rice between your fingers. It should break into 2-3 pieces. <strong>Do not overcook.</strong></li>
+                            <li>Immediately drain the rice in a colander and set aside. You can discard the whole spices if you wish.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: Layering & Dum -->
+            <div class="accordion-section">
+                <button class="accordion-toggle">
+                    <span>4. Layering & 'Dum' Cooking</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <p class="body-large text-gray-700 mb-4">
+                            "Dum" is the technique of slow-steaming the biryani in a sealed pot, allowing the chicken to cook and 
+                            the flavors to meld beautifully with the rice.
+                        </p>
+                        <ol class="list-decimal list-inside space-y-4">
+                            <li>Take a heavy-bottomed pot or a pressure cooker (don't use the whistle). Spread the marinated chicken evenly at the bottom.</li>
+                            <li>Layer the 70% cooked rice evenly over the chicken.</li>
+                            <li>Sprinkle the remaining fried onions, chopped mint, coriander, and slit green chilies over the rice.</li>
+                            <li>Drizzle the saffron-infused milk and the remaining ghee/oil over the top.</li>
+                            <li>
+                                <strong>Sealing the Pot (The 'Dum'):</strong>
+                                <div id="dum-step" class="method-content mt-3"></div>
+                            </li>
+                            <li>
+                                <strong>Cooking Instructions:</strong>
+                                <ul class="list-disc list-inside ml-6 mt-3 space-y-2">
+                                    <li>Place the sealed pot on the stove. Cook on high heat for the first 5-7 minutes.</li>
+                                    <li>Reduce the heat to the absolute lowest setting. Place a flat tawa (griddle) under the pot if you have one to ensure even heat distribution.</li>
+                                    <li>Cook on this low heat for 20-25 minutes.</li>
+                                    <li>Turn off the heat and let the biryani rest, still sealed, for another 10-15 minutes. This is crucial for the flavors to settle.</li>
+                                </ul>
+                            </li>
+                            <li>To serve, gently fluff the rice from the sides with a fork or spatula. Serve hot with raita or salan. Enjoy your masterpiece!</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const difficultyToggle = document.getElementById('difficultyToggle');
+        const biristaStep = document.getElementById('birista-step');
+        const masalaStep = document.getElementById('masala-step');
+        const dumStep = document.getElementById('dum-step');
+        
+        const servingCountEl = document.getElementById('serving-count');
+        const heroServingsEl = document.getElementById('hero-servings');
+        const minusBtn = document.getElementById('minusBtn');
+        const plusBtn = document.getElementById('plusBtn');
+        
+        let servings = 2;
+
+        const baseIngredients = {
+            chicken: { amount: 250, unit: 'g', el: 'chicken-qty', name: 'Chicken', note: ', bone-in, cut into pieces' },
+            yogurt: { amount: 0.5, unit: 'cup', el: 'yogurt-qty', name: 'Yogurt (Curd)', note: ', thick' },
+            gingerGarlic: { amount: 1, unit: 'tbsp', el: 'ginger-garlic-qty', name: 'Ginger-Garlic Paste' },
+            chiliPowder: { amount: 0.75, unit: 'tsp', el: 'chili-powder-qty', name: 'Red Chili Powder', note: ' (adjust to heat)' },
+            turmeric: { amount: 0.25, unit: 'tsp', el: 'turmeric-qty', name: 'Turmeric Powder' },
+            lemonJuice: { amount: 1, unit: 'tbsp', el: 'lemon-juice-qty', name: 'Lemon Juice' },
+            saltMarinade: { amount: 0.5, unit: 'tsp', el: 'salt-marinade-qty', name: 'Salt' },
+            biryaniMasala: { amount: 1.5, unit: 'tbsp', el: 'biryani-masala-qty', name: 'Biryani Masala Powder' },
+            rice: { amount: 1, unit: 'cup', el: 'rice-qty', name: 'Basmati Rice' },
+            water: { amount: 4, unit: 'cups', el: 'water-qty', name: 'Water', note: ' (for boiling)' },
+            saltBoiling: { amount: 1, unit: 'tbsp', el: 'salt-boiling-qty', name: 'Salt', note: ' (for boiling water)' },
+            oilRice: { amount: 0.5, unit: 'tsp', el: 'oil-rice-qty', name: 'Oil' },
+            onions: { amount: 1, unit: 'large onion', el: 'onions-qty', name: 'Onions', note: ', thinly sliced' },
+            onionsStore: { amount: 0.5, unit: 'cup', el: 'onions-qty', name: 'Store-bought Fried Onions (Birista)' },
+            mint: { amount: 0.25, unit: 'cup', el: 'mint-qty', name: 'Mint Leaves', note: ', chopped' },
+            coriander: { amount: 0.25, unit: 'cup', el: 'coriander-qty', name: 'Coriander Leaves', note: ', chopped' },
+            greenChilies: { amount: 2, unit: 'chili', el: 'green-chilies-qty', name: 'Green Chilies', note: ', slit' },
+            gheeOil: { amount: 2, unit: 'tbsp', el: 'ghee-oil-qty', name: 'Ghee / Oil' },
+        };
+
+        const content = {
+            birista: {
+                easy: `
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="heading-3 mb-4 text-orange-600">Fried Onions (Birista) - The Easy Way</h3>
+                            <p class="body-large mb-4"><strong>Method:</strong> Use store-bought fried onions.</p>
+                            <p class="text-gray-600">
+                                This is the biggest time-saver. You can find them in most Indian grocery stores. 
+                                Just grab the calculated amount and you're ready for the next step. No frying, no mess!
+                            </p>
+                        </div>
+                    </div>
+                `,
+                hard: `
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="heading-3 mb-4 text-orange-600">Fried Onions (Birista) - The Taste Focus Way</h3>
+                            <p class="body-large mb-4"><strong>Method:</strong> Make them fresh from scratch.</p>
+                            <p class="text-gray-600 mb-4">
+                                Homemade birista has an unparalleled aroma and crispiness. It's a game-changer for flavor.
+                            </p>
+                            <ol class="list-decimal list-inside space-y-2">
+                                <li>Thinly and evenly slice the required number of large onions. Use a mandoline for best results.</li>
+                                <li>Heat a generous amount of oil in a kadai or deep pan over medium-high heat.</li>
+                                <li>Add the onions and fry, stirring occasionally, until they turn a deep, even golden brown. This can take 15-20 minutes.</li>
+                                <li>Be very watchful towards the end as they can burn quickly.</li>
+                                <li>Remove with a slotted spoon onto a plate lined with paper towels to drain excess oil. They will become crisp as they cool.</li>
+                            </ol>
+                        </div>
+                    </div>
+                `
+            },
+            masala: {
+                easy: `
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="heading-3 mb-4 text-orange-600">Biryani Masala - The Easy Way</h3>
+                            <p class="body-large mb-4"><strong>Method:</strong> Use a good quality store-bought biryani masala powder.</p>
+                            <p class="text-gray-600">
+                                Brands like Shan, Everest, or MDH offer excellent biryani masalas that give you a great, 
+                                consistent flavor without the effort of roasting and grinding spices.
+                            </p>
+                        </div>
+                    </div>
+                `,
+                hard: `
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="heading-3 mb-4 text-orange-600">Biryani Masala - The Taste Focus Way</h3>
+                            <p class="body-large mb-4"><strong>Method:</strong> Make your own fresh biryani masala.</p>
+                            <p class="text-gray-600 mb-4">
+                                The aroma of freshly roasted and ground spices is what separates a good biryani from a great one. 
+                                The effort is well worth it.
+                            </p>
+                            <p class="font-semibold mb-3">Ingredients for Masala:</p>
+                            <p class="text-gray-600 mb-4">
+                                1 tbsp coriander seeds, 1 tsp cumin seeds, 1 tsp fennel seeds, 5-6 green cardamoms, 
+                                4-5 cloves, 1 black cardamom, 1-inch cinnamon stick, 1 star anise, 1/2 tsp black peppercorns, 
+                                a small piece of mace (javitri).
+                            </p>
+                            <ol class="list-decimal list-inside space-y-2">
+                                <li>Dry roast all the spices in a pan on low heat for 2-3 minutes until they become fragrant.</li>
+                                <li>Let them cool down completely.</li>
+                                <li>Grind them into a fine powder in a coffee grinder or spice mill. Store extra in an airtight container.</li>
+                            </ol>
+                        </div>
+                    </div>
+                `
+            },
+            dum: {
+                easy: `
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="heading-4 mb-3">The Easy Way (Pressure Cooker / Tight Lid)</h4>
+                            <p class="text-gray-600">
+                                If you're using a pressure cooker, just close the lid (<strong>DO NOT</strong> put the whistle/weight on). 
+                                If your pot has a tight-fitting lid, that's often good enough for a quick version.
+                            </p>
+                        </div>
+                    </div>
+                `,
+                hard: `
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="heading-4 mb-3">The Taste Focus Way (Dough Seal)</h4>
+                            <p class="text-gray-600 mb-4">
+                                This is the traditional method to trap every bit of steam and flavor.
+                            </p>
+                            <ol class="list-decimal list-inside space-y-2">
+                                <li>Make a simple, soft dough using whole wheat flour (atta) and water.</li>
+                                <li>Roll it into a long rope.</li>
+                                <li>Press this dough rope along the rim of the pot to create a seal between the pot and the lid.</li>
+                                <li>Press the lid down firmly onto the dough to create an airtight seal.</li>
+                            </ol>
+                        </div>
+                    </div>
+                `
+            }
+        };
+
+        function formatQuantity(qty) {
+            if (qty === 0) return 0;
+            const fractions = { 0.25: '1/4', 0.5: '1/2', 0.75: '3/4' };
+            return fractions[qty] || qty;
+        }
+
+        function getUnit(qty, unit) {
+            if (qty > 1 && !unit.endsWith('s') && unit !== 'tbsp' && unit !== 'tsp') {
+                if (unit === 'chili') return 'chilies';
+                if (unit === 'cup') return 'cups';
+                return unit + 's';
+            }
+            if (qty <= 1 && unit.endsWith('s') && unit !== 'cups') {
+                 if (unit === 'chilies') return 'chili';
+                 return unit.slice(0, -1);
+            }
+            return unit;
+        }
+
+        function updateIngredients() {
+            const isHard = difficultyToggle.checked;
+            
+            for (const key in baseIngredients) {
+                const item = baseIngredients[key];
+                const el = document.getElementById(item.el);
+                if (!el) continue;
+
+                let currentItem = item;
+                if (isHard && key === 'onionsStore') continue;
+                if (!isHard && key === 'onions') continue;
+                if (!isHard && key === 'onionsStore') {
+                    currentItem = baseIngredients.onionsStore;
+                }
+
+                let newAmount = currentItem.amount * servings;
+                let formattedAmount = formatQuantity(newAmount);
+                let unit = getUnit(newAmount, currentItem.unit);
+                
+                el.textContent = `${formattedAmount} ${unit}`;
+            }
+
+            // Update onion name based on method
+            const onionNameEl = document.getElementById('onion-name');
+            if (onionNameEl) {
+                onionNameEl.textContent = isHard ? 'Onions, thinly sliced' : 'Store-bought Fried Onions (Birista)';
+            }
+
+            // Update serving display in hero
+            heroServingsEl.textContent = servings;
+        }
+
+        function updateRecipeView() {
+            const isHard = difficultyToggle.checked;
+            biristaStep.innerHTML = isHard ? content.birista.hard : content.birista.easy;
+            masalaStep.innerHTML = isHard ? content.masala.hard : content.masala.easy;
+            dumStep.innerHTML = isHard ? content.dum.hard : content.dum.easy;
+            updateIngredients();
+        }
+
+        minusBtn.addEventListener('click', () => {
+            if (servings > 1) {
+                servings--;
+                servingCountEl.textContent = servings;
+                updateIngredients();
+            }
+            plusBtn.disabled = false;
+            if (servings === 1) {
+                minusBtn.disabled = true;
+            }
+        });
+
+        plusBtn.addEventListener('click', () => {
+            if (servings < 12) { // Max 12 servings
+                servings++;
+                servingCountEl.textContent = servings;
+                updateIngredients();
+            }
+            minusBtn.disabled = false;
+            if (servings === 12) {
+                plusBtn.disabled = true;
+            }
+        });
+
+        difficultyToggle.addEventListener('change', updateRecipeView);
+
+        // Accordion functionality using design system classes
+        document.querySelectorAll('.accordion-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('.accordion-icon');
+                
+                if (content.classList.contains('open')) {
+                    content.classList.remove('open');
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    // Close all other accordions
+                    document.querySelectorAll('.accordion-content.open').forEach(openContent => {
+                        openContent.classList.remove('open');
+                        openContent.previousElementSibling.querySelector('.accordion-icon').style.transform = 'rotate(0deg)';
+                    });
+                    content.classList.add('open');
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements with animation classes
+        document.querySelectorAll('.slide-up, .fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Initial load
+        updateRecipeView();
+        minusBtn.disabled = false;
+        if (servings === 1) minusBtn.disabled = true;
+        
+        // Open first accordion by default
+        const firstAccordion = document.querySelector('.accordion-toggle');
+        if (firstAccordion) {
+            firstAccordion.click();
+        }
+    </script>
+
+</body>
+</html>

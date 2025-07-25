@@ -1,4 +1,5 @@
-/* Culinary Craft Design System */
+/* Culinary Craft Design System v2.0 */
+/* Enhanced with extensible patterns for recipe categories and new content types */
 
 /* CSS Custom Properties for consistent theming */
 :root {
@@ -26,12 +27,50 @@
     --secondary-800: #1e293b;
     --secondary-900: #0f172a;
     
-    /* Accent Colors */
+    /* Legacy Accent Colors */
     --accent-orange: #ea580c;
     --accent-green: #16a34a;
     --accent-blue: #2563eb;
     --accent-red: #dc2626;
     --accent-yellow: #ca8a04;
+    
+    /* Recipe Category Colors */
+    --category-main: #dc2626;        /* Red - Main Courses */
+    --category-main-light: #fca5a5;
+    --category-breakfast: #ca8a04;   /* Yellow - Breakfast */
+    --category-breakfast-light: #fde047;
+    --category-snacks: #16a34a;     /* Green - Snacks */
+    --category-snacks-light: #86efac;
+    --category-desserts: #a855f7;   /* Purple - Desserts */
+    --category-desserts-light: #d8b4fe;
+    --category-beverages: #0ea5e9;  /* Blue - Beverages */
+    --category-beverages-light: #7dd3fc;
+    --category-appetizers: #ea580c; /* Orange - Appetizers */
+    --category-appetizers-light: #fed7aa;
+    --category-sides: #059669;      /* Emerald - Side Dishes */
+    --category-sides-light: #6ee7b7;
+    --category-soups: #0d9488;      /* Teal - Soups */
+    --category-soups-light: #5eead4;
+    
+    /* Difficulty Level Colors */
+    --difficulty-easy: #16a34a;      /* Green */
+    --difficulty-medium: #ca8a04;    /* Yellow */
+    --difficulty-hard: #dc2626;      /* Red */
+    --difficulty-expert: #7c2d12;    /* Dark Red */
+    
+    /* Cooking Method Colors */
+    --method-stovetop: #64748b;      /* Gray */
+    --method-oven: #ea580c;          /* Orange */
+    --method-pressure: #dc2626;      /* Red */
+    --method-slow: #16a34a;          /* Green */
+    --method-grill: #7c2d12;         /* Dark Red */
+    --method-raw: #0ea5e9;           /* Blue */
+    
+    /* Semantic Colors */
+    --success: #16a34a;
+    --warning: #ca8a04;
+    --error: #dc2626;
+    --info: #0ea5e9;
     
     /* Background Colors */
     --bg-primary: #ffffff;
@@ -556,6 +595,295 @@ body {
     }
 }
 
+/* Advanced Interactive Components */
+
+/* Difficulty Toggle Switch */
+.difficulty-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 32px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--secondary-300);
+    transition: var(--transition-base);
+    border-radius: var(--radius-full);
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: var(--transition-base);
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-sm);
+}
+
+.toggle-switch input:checked + .toggle-slider {
+    background-color: var(--primary-500);
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+    transform: translateX(28px);
+}
+
+/* Accordion Components */
+.accordion-section {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-light);
+    margin-bottom: var(--space-4);
+    overflow: hidden;
+    transition: all var(--transition-base);
+}
+
+.accordion-toggle {
+    width: 100%;
+    text-align: left;
+    padding: var(--space-6);
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all var(--transition-fast);
+}
+
+.accordion-toggle:hover {
+    background: var(--bg-tertiary);
+}
+
+.accordion-icon {
+    transition: transform var(--transition-base);
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    border-top: 1px solid var(--border-light);
+}
+
+.accordion-content.open {
+    max-height: 2000px;
+    transition: max-height 0.7s ease-in;
+}
+
+.accordion-content .accordion-body {
+    padding: var(--space-6);
+}
+
+/* Serving Size Calculator */
+.serving-calculator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    background: var(--bg-primary);
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+}
+
+.serving-control {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.serving-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    border: none;
+    background: var(--primary-500);
+    color: white;
+    font-weight: 700;
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.serving-btn:hover:not(:disabled) {
+    background: var(--primary-600);
+    transform: scale(1.05);
+}
+
+.serving-btn:disabled {
+    background: var(--secondary-300);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.serving-display {
+    font-weight: 600;
+    font-size: 1.125rem;
+    min-width: 120px;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+/* Enhanced Ingredient Lists */
+.ingredient-checklist {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    border: 1px solid var(--border-light);
+}
+
+.ingredient-group {
+    margin-bottom: var(--space-6);
+}
+
+.ingredient-group:last-child {
+    margin-bottom: 0;
+}
+
+.ingredient-group-title {
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--primary-600);
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-2);
+    border-bottom: 2px solid var(--primary-100);
+}
+
+.ingredient-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ingredient-list li {
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--border-light);
+    position: relative;
+    padding-left: var(--space-6);
+}
+
+.ingredient-list li:last-child {
+    border-bottom: none;
+}
+
+.ingredient-list li:before {
+    content: "•";
+    color: var(--primary-500);
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+}
+
+.ingredient-quantity {
+    font-weight: 700;
+    color: var(--primary-600);
+}
+
+/* Method Toggle Content */
+.method-content {
+    transition: opacity var(--transition-base);
+}
+
+.method-content.hidden {
+    display: none;
+}
+
+/* Recipe Page Specific */
+.recipe-page {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: var(--space-6);
+}
+
+.recipe-hero-modern {
+    text-align: center;
+    padding: var(--space-16) var(--space-6);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-2xl);
+    margin-bottom: var(--space-8);
+}
+
+.recipe-emoji-large {
+    font-size: 5rem;
+    margin-bottom: var(--space-4);
+    display: block;
+}
+
+.recipe-title-main {
+    font-size: 3.5rem;
+    font-weight: 700;
+    font-family: var(--font-display);
+    color: var(--primary-600);
+    margin-bottom: var(--space-4);
+    line-height: 1.1;
+}
+
+.recipe-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-8);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Control Panel */
+.recipe-controls {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-8);
+    margin-bottom: var(--space-8);
+    box-shadow: var(--shadow-md);
+}
+
+.control-section {
+    margin-bottom: var(--space-6);
+}
+
+.control-section:last-child {
+    margin-bottom: 0;
+}
+
+.control-label {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: var(--space-4);
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
     :root {
@@ -571,5 +899,26 @@ body {
         --border-light: #334155;
         --border-medium: #475569;
         --border-dark: #64748b;
+    }
+}
+
+/* Responsive Design Enhancements */
+@media (max-width: 768px) {
+    .recipe-title-main {
+        font-size: 2.5rem;
+    }
+    
+    .recipe-controls {
+        padding: var(--space-6);
+    }
+    
+    .difficulty-toggle {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .serving-calculator {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
